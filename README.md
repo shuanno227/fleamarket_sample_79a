@@ -28,23 +28,26 @@
 
 ## items テーブル
 
-| Column        | Type   | Options                        |
-| ------------- | ------ | ------------------------------ |
-| name          | string | null: false                    |
-| price         | string | null: false                    |
-| description   | string | null: false                    |
-| stock         | string | null: false                    |
-| condition     | string | null: false                    |
-| size          | string | null: false                    |
-| shipping_cost | string | null: false                    |
-| shipping_time | string | null: false                    |
-| sending_area  | string | null: false                    |
-| prefecture_id | string | null: false, foreign_key: true |
-| brand_id      | string | foreign_key: true              |
-| user_id       | string | null: false, foreign_key: true |
+| Column           | Type   | Options                        |
+| ---------------- | ------ | ------------------------------ |
+| name             | string | null: false                    |
+| price            | string | null: false                    |
+| description      | string | null: false                    |
+| stock            | string | null: false                    |
+| condition_id     | string | null: false, foreign_key: true |
+| size_id          | string | null: false, foreign_key: true |
+| shipping_cost_id | string | null: false, foreign_key: true |
+| shipping_time_id | string | null: false, foreign_key: true |
+| prefecture_id    | string | null: false, foreign_key: true |
+| brand_id         | string | foreign_key: true              |
+| user_id          | string | null: false, foreign_key: true |
 
 ### Association
 
+- belongs_to :condition
+- belongs_to :size
+- belongs_to :shipping_cost
+- belongs_to :shipping_time
 - belongs_to :prefecture
 - belongs_to :brand
 - has_one :purchase
@@ -111,6 +114,54 @@
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
 | name   | string | null: false |
+
+### Association
+
+- has_many :items
+
+---
+
+## sizes テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| size   | string | null: false |
+
+### Association
+
+- has_many :items
+
+---
+
+## conditions テーブル
+
+| Column    | Type   | Options     |
+| --------- | ------ | ----------- |
+| condition | string | null: false |
+
+### Association
+
+- has_many :items
+
+---
+
+## shipping_costs テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| cost   | string | null: false |
+
+### Association
+
+- has_many :items
+
+---
+
+## shipping_times テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| time   | string | null: false |
 
 ### Association
 
