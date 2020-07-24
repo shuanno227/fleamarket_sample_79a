@@ -1,0 +1,86 @@
+%section.item-show
+  .item-show__box
+    .item-show__box__title
+      %h2 
+        Levi's リーバイス Tシャツ　半袖
+    .item-show__box__main
+      .item-show__box__main-img
+        = image_tag 'levis.jpg', class: 'item-img'
+      .item-show__box__main-right
+        %table
+          %tr
+            %th
+              出品者
+            %td
+              = link_to "#" do
+                みなみ
+          %tr
+            %th
+              カテゴリー
+            %td
+              = link_to "#" do
+                %p メンズ
+              = link_to "#" do
+                %p ＞ トップス
+              = link_to "#" do
+                %p ＞ Tシャツ/カットソー(半袖/袖なし)
+          %tr
+            %th
+              ブランド
+            %td
+              = link_to "#" do
+                リーバイス
+          %tr
+            %th
+              商品のサイズ
+            %td
+              L
+          %tr
+            %th
+              商品の状態
+            %td
+              目立った傷や汚れなし
+          %tr
+            %th
+              配送料の負担
+            %td
+              送料込み(出品者負担)
+          %tr
+            %th
+              配送の方法
+            %td
+              ゆうゆうメルカリ便
+          %tr
+            %th
+              配送元地域	
+            %td
+              神奈川県
+          %tr
+            %th
+              発送日の目安
+            %td
+              1~2日で発送
+    .item-show__box__price
+      %p
+        ¥900 
+        %span
+          (税込)送料込み
+    .item-show__box__button
+      %button{type: "submit", class: "button"}
+        .letter
+          購入画面に進む
+    .item-show__box__description
+      %p Levi'sのTシャツです。
+      %p  数回着用しました。
+      %p  サイズはMです。
+      %p  簡易梱包での発送となります。
+
+
+-# ＜追加実装のコメント部分＞
+  -# .item-show__comment__box
+  -#   .item-show__comment__box-form
+  -#     %from
+  -#       %textarea{name: "comment", type: "text",  placeholder: "コメントする", rows: "2", class: "input"}
+  -#       %button{type: "submit", class: "button"}
+  -#         .letter
+  -#           コメントする
