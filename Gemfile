@@ -70,3 +70,5 @@ gem 'mini_magick'
 gem 'devise'
 gem 'jquery-rails'
 gem 'fog-aws'
+
+gem 'active_hash'
