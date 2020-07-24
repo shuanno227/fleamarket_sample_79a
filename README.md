@@ -34,7 +34,7 @@
 | city                       | string  | null: false                    |
 | address                    | string  | null: false                    |
 | room_number                | string  |                                |
-| telephone_number           | string  | null: false                    |
+| telephone_number           | string  |                                |
 | user_id                    | bigint  | null: false, foreign_key: true |
 
 ### Association
