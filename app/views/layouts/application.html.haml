@@ -11,7 +11,7 @@
     %header.header
       .header__top
         .header__top-img
-          = link_to "#" do
+          = link_to root_path do
             = image_tag 'furima_img.svg'
         .header__top-form
           %form
@@ -25,8 +25,8 @@
           = link_to "ブランド", "#" 
 
         .header__bottom-right
-          = link_to "ログイン", "#" 
-          = link_to "新規登録", "#" 
+          = link_to "ログイン", new_user_session_path 
+          = link_to "新規登録",  new_user_registration_path
     = yield
     %footer.footer
       .footer__top
