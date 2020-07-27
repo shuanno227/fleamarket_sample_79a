@@ -26,7 +26,7 @@
 
         - if user_signed_in?
           .header__bottom-right
-            = link_to "マイページ", "/users/#{current_user.id}"
+            = link_to "マイページ", "#"
             = link_to "ログアウト", destroy_user_session_path, method: :delete
         - else
           .header__bottom-right
