@@ -1,1 +1,60 @@
-%h2 新規登録
+.SignUp  
+  .SignUp__content
+    %h2.registration 会員情報入力
+    .registrationForm
+      = form_for(@user, url: user_registration_path) do |f|
+        = render "devise/shared/error_messages", resource: @user
+        .field
+          .FormLabel
+            = f.label :nickname, 'ニックネーム', class: "title"
+            .MustMessage 必須
+          = f.text_field :nickname, autofocus: true, autocomplete: "off", placeholder: "例) フリマ太郎", class: "input input-default"
+        .field
+          .FormLabel
+            = f.label :email, 'メールアドレス', class: "title"
+            .MustMessage 必須
+          = f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "PC・携帯どちらでも可", class: "input input-default"
+        .field
+          .FormLabel
+            = f.label :password, 'パスワード', class: "title"
+            .MustMessage 必須
+          = f.password_field :password, autocomplete: "off", placeholder: "#{@minimum_password_length}文字以上の半角英数字", class: "input input-default"
+          %p.attention ＊英字と数字の両方を含めて設定してください
+        .field
+          .FormLabel
+            = f.label :password_confirmation, 'パスワードの再確認', class: "title"
+            .MustMessage 必須
+          = f.password_field :password_confirmation, autocomplete: "off", placeholder: "#{@minimum_password_length}文字以上の半角英数字", class: "input input-default"
+          %p.attention ＊英字と数字の両方を含めて設定してください
+          .confirmation
+            %h4.confirmation--title 本人確認
+            %p.confirmation--message 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        .field
+          .FormLabel
+            = f.label 'お名前(全角)', class: "title"
+            .MustMessage 必須
+          = f.text_field :last_name, autofocus: true, autocomplete: "off", placeholder: "例) 山田", class: "input-name-left input-default"
+          = f.text_field :first_name, autofocus: true, autocomplete: "off", placeholder: "例) 太郎", class: "input-name input-default"
+        .field
+          .FormLabel
+            = f.label 'お名前カナ(全角)', class: "title"
+            .MustMessage 必須
+          = f.text_field :last_name_hurigana, autofocus: true, autocomplete: "off", placeholder: "例) ヤマダ", class: "input-name-left input-default"
+          = f.text_field :first_name_hurigana, autofocus: true, autocomplete: "off", placeholder: "例) タロウ", class: "input-name input-default"
+        .field
+          .FormLabel
+            = f.label '生年月日', class: "title"
+            .MustMessage 必須
+          = f.select :birth_year,["--"], {},{class: "birth input-default", id:"select_birth_year"}
+          = "年"
+          = f.select :birth_month,["--"], {},{class: "birth input-default", id:"select_birth_month"}
+          = "月"
+          = f.select :birth_day,["--"], {},{class: "birth input-default", id:"select_birth_day"}
+          = "日"
+          %p.attention ＊本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+        .actions
+          = f.submit "次へ進む", class: "nextBtn"
+          = link_to "ログイン", new_user_session_path, class: "Login"
+            
+

@@ -1,0 +1,31 @@
+.complete{
+  height: 600px;
+  padding-top: 100px;
+  background-color: #F2F2F2;
+  &__content {    
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    width: 700px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 24px 0;
+    .message {
+      margin: 0 auto;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 32px;
+      text-align: center;
+      margin: 200px 0 50px 0 ;
+    }
+    .pageTop {
+      display: block;
+      margin: 0 auto;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 32px;
+      text-align: center;
+    }
+  }
+}
