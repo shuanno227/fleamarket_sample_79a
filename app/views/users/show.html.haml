@@ -1,0 +1,10 @@
+%section.user__my-page
+  .user__my-page__box
+    %h2 マイページ
+    .user__my-page__box__name
+      ユーザー名:
+      %per.user__name 
+        = @user.nickname
+    .user__my-page__box__button
+      .user__my-page__box__button-credit
+        = link_to "クレジットカード登録", "#", class: "button" 
