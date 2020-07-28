@@ -1,0 +1,48 @@
+.SignUp
+  .SignUp__content
+    %h2.registration 住所情報登録
+    .registrationForm
+      = form_for @address do |f|
+        = render "devise/shared/error_messages", resource: @address
+        .field
+          .FormLabel
+            = f.label :destination_name, '送付先氏名(全角)', class: "title"
+            .MustMessage 必須
+          = f.text_field :destination_name, autofocus: true, autocomplete: "off", placeholder: "例) フリマ太郎", class: "input input-default"
+        .field
+          .FormLabel
+            = f.label :destination_name_hurigana, '送付先氏名カナ(全角)', class: "titile"
+            .MustMessage 必須
+          = f.text_field :destination_name_hurigana, autofocus: true, autocomplete: "off", placeholder: "例) フリマタロウ", class: "input input-default"
+        .field
+          .FormLabel
+            = f.label :post_code, '郵便番号', class: "title"
+            .MustMessage 必須
+          = f.text_field :post_code, autofocus: true, autocomplete: "off", placeholder: "例) 1239876", class: "input input-default"
+          %p.attention ＊ハイフンを入れずに入力してください
+        .field
+          .FormLabel
+            = f.label :prefecture_id, '都道府県', class: "title"
+            .MustMessage 必須
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name 
+        .field
+          .FormLabel
+            = f.label :city, '市区町村', class: "title"
+            .MustMessage 必須
+          = f.text_field :city, autofocus: true, autocomplete: "off", placeholder: "例) フリマ市フリマ区", class: "input input-default"
+        .field
+          .FormLabel
+            = f.label :address, '番地'
+            .MustMessage 必須
+          = f.text_field :address, autofocus: true, autocomplete: "off", placeholder: "例) 4-6-5", class: "input input-default"
+        .field
+          .FormLabel
+            = f.label :room_number, '建物名'
+          = f.text_field :room_number, autofocus: true, autocomplete: "off", placeholder: "例) ●●マンション０００号", class: "input input-default"
+        .field
+          .FormLabel
+            = f.label :telephone_number, '電話番号'
+          = f.text_field :telephone_number, autofocus: true, autocomplete: "off", placeholder: "例) 09012345678", class: "input input-default"
+          %p.attention ＊ハイフンを入れずに入力してください
+        .actions
+          = f.submit "新規登録", class: "nextBtn"
