@@ -43,6 +43,11 @@
             <PaintGroupHighlightMap />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/db/migrate/20200724021743_devise_create_users.rb">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/db/migrate/20200724023138_create_addresses.rb">
           <value>
             <PaintGroupHighlightMap />

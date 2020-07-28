@@ -11,7 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :last_name,            null: false
       t.string :first_name_hurigana,  null: false
       t.string :last_name_hurigana,   null: false
-      t.string :birth_year,           null: false
+      t.string :birth_year,           null: false  # TODO birthday date型にまとめる
       t.string :birth_month,          null: false
       t.string :birth_day,            null: false
 
