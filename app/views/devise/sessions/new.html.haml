@@ -1,17 +1,21 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.SignIn
+  .SignIn__content
+    %h2.registration ログイン
+    .LoginForm
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          .FormLabel
+            = f.label :email, 'メールアドレス', class: "title"
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "input input-default"
+        .field
+          .FormLabel
+            = f.label :password, 'パスワード', class: "title"
+          = f.password_field :password, autocomplete: "current-password",  class: "input input-default"
+        - if devise_mapping.rememberable?
+          .field
+            .FormLabel
+              = f.check_box :remember_me, class: "check_box"
+              = f.label :remember_me, 'ログイン情報を保持しますか？', class: "remember-message"
+        .actions
+          = f.submit "ログイン", class: "nextBtn"
+          = link_to "新規登録", user_registration_path, class: "Login"
