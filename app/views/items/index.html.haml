@@ -1,2 +1,251 @@
-%h1 Items#index
-%p Find me in app/views/items/index.html.erb
+.MainApp
+  .MainApp__Theme
+    .MainApp__Theme__Content
+      %h2.MainApp__Theme__Content__SubTitle 
+        %br 
+        人生を変えるフリマアプリ
+      %p.MainApp__Theme__Content__Text
+        FURIMAはだれにでもかんたんに出品・購入できる
+        %br 
+        フリマアプリです
+      .MainApp__Theme__Content__BTN
+        .apple
+          = link_to image_tag(src= "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class: "MainApp__Theme__Content__BTN__Apple"), '#'
+        .google
+          = link_to image_tag(src="http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class: "MainApp__Theme__Content__BTN__Google"), '#'
+    .MainApp__Theme__Picture3"""
+  .MainApp__Reason
+    %h2.MainApp__Reason__SubTitle
+      FURIMAが選ばれる3つの理由
+    %ul.MainApp__Reason__Lists
+      %li.MainApp__Reason__Lists__List
+        .MainApp__Reason__Lists__List__Pict
+          %span.MainApp__Reason__Lists__List__Pict__Number  1
+          %img{ src: "assets/pict-reason-01.jpg", alt: "画像"}
+        %h3.MainApp__Reason__Lists__List__Text
+          %span  3分
+          ですぐに出品
+        %p.MainApp__Reason__Lists__List__Description
+          スマホで入力するだけで簡単に出品できる！
+      %li.MainApp__Reason__Lists__List
+        .MainApp__Reason__Lists__List__Pict
+          %span.MainApp__Reason__Lists__List__Pict__Number  2
+          %img{ src: "assets/pict-reason-02.jpg", alt: "画像"}
+        %h3.MainApp__Reason__Lists__List__Text
+          %span  シンプル
+          で使いやすい
+        %p.MainApp__Reason__Lists__List__Description
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.MainApp__Reason__Lists__List
+        .MainApp__Reason__Lists__List__Pict
+          %span.MainApp__Reason__Lists__List__Pict__Number  3
+          %img{ src: "assets/pict-reason-03.jpg", alt: "画像"}
+        %h3.MainApp__Reason__Lists__List__Text
+          手数料
+          %span  業界最安
+        %p.MainApp__Reason__Lists__List__Description
+          最大3%でお得に出品&購入！
+  .MainApp__Achievement
+    .MainApp__Achievement__Inner
+      %h2.MainApp__Achievement__Inner__SubTitle  会員数日本一位
+      %p.MainApp__Achievement__Inner__Text
+        FURIMAは、フリマアプリで最も人気。
+        %br 出品・購入回数も業界最多です！ 
+        ほしかったあの商品に出会えるかもしれません。
+      .MainApp__Achievement__Inner__BTN
+        .apple
+          = link_to image_tag(src= "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class: "MainApp__Achievement__Inner__BTN__Apple"), '#'
+        .google
+          = link_to image_tag(src="http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class: "MainApp__Achievement__Inner__BTN__Google"), '#'
+  .MainApp__Feature
+    %h2.MainApp__Feature__Head
+      FURIMAの特徴
+    .MainApp__Feature__Items
+      .MainApp__Feature__Items__Item
+        %img{ src: "assets/icon-01.png", class:"MainApp__Feature__Items__Item__Img"}
+        %h3.MainApp__Feature__Items__Item__SubTitle
+          簡単に売り買いできる
+        %p.MainApp__Feature__Items__Item__Detail
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      .MainApp__Feature__Items__Item
+        %img{ src: "assets/icon-03.png", class:"MainApp__Feature__Items__Item__Img"}
+        %h3.MainApp__Feature__Items__Item__SubTitle
+          売上金は即日振込みに対応
+        %p.MainApp__Feature__Items__Item__Detail
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
+      .MainApp__Feature__Items__Item
+        %img{ src: "assets/icon-04.png", class:"MainApp__Feature__Items__Item__Img"}
+        %h3.MainApp__Feature__Items__Item__SubTitle
+          様々な支払いに対応
+        %p.MainApp__Feature__Items__Item__Detail
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  .MainApp__Conteiner
+    %h2.MainApp__Conteiner__Head
+      ピックアップカテゴリー
+    .MainApp__Conteiner__PruductBox
+      .MainApp__Conteiner__PruductBox__Head
+        = link_to '#', class: "MainApp__Conteiner__PruductBox__Head__Link"  do
+          %h3.MainApp__Conteiner__PruductBox__Head__Link__Title  
+            新規投稿
+      .MainApp__Conteiner__PruductBox__Lists
+        .MainApp__Conteiner__PruductBox__Lists__List
+          =link_to "#", class: "MainApp__Conteiner__PruductBox__Lists__List__A" do
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Img
+              %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"}
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Body
+              %h3.MainApp__Conteiner__PruductBox__Lists__List__A__Body__Name 
+                product3
+              .MainApp__Conteiner__PruductBox__Lists__List__A__Body__Details
+                %ul
+                  %li
+                    30000円
+                  %li
+                    .icon 
+                      = icon('fas', 'star')
+                    0 
+                %p
+                  （税込）
+        .MainApp__Conteiner__PruductBox__Lists__List
+          =link_to "#", class: "MainApp__Conteiner__PruductBox__Lists__List__A" do
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Img
+              %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"}
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Body
+              %h3.MainApp__Conteiner__PruductBox__Lists__List__A__Body__Name 
+                product3
+              .MainApp__Conteiner__PruductBox__Lists__List__A__Body__Details
+                %ul
+                  %li
+                    30000円
+                  %li
+                    .icon 
+                      = icon('fas', 'star')
+                    0
+              %p 
+                （税込）
+        .MainApp__Conteiner__PruductBox__Lists__List
+          =link_to "#", class: "MainApp__Conteiner__PruductBox__Lists__List__A" do
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Img
+              %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"}
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Body
+              %h3.MainApp__Conteiner__PruductBox__Lists__List__A__Body__Name 
+                product3
+              .MainApp__Conteiner__PruductBox__Lists__List__A__Body__Details
+                %ul
+                  %li
+                    30000円
+                  %li
+                    .icon 
+                      = icon('fas', 'star')
+                    0
+              %p 
+                （税込）
+        .MainApp__Conteiner__PruductBox__Lists__List
+          =link_to "#", class: "MainApp__Conteiner__PruductBox__Lists__List__A" do
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Img
+              %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Body
+              %h3.MainApp__Conteiner__PruductBox__Lists__List__A__Body__Name 
+                product3
+              .MainApp__Conteiner__PruductBox__Lists__List__A__Body__Details
+                %ul
+                  %li
+                    30000円
+                  %li
+                    .icon 
+                      = icon('fas', 'star')
+                    0
+              %p 
+                （税込）
+  .MainApp__Conteiner
+    %h2.MainApp__Conteiner__Head
+      ピックアップブランド
+    .MainApp__Conteiner__PruductBox
+      .MainApp__Conteiner__PruductBox__Head
+        = link_to '#', class: "MainApp__Conteiner__PruductBox__Head__Link"  do
+          %h3.MainApp__Conteiner__PruductBox__Head__Link__Title  
+            アーカイバ
+      .MainApp__Conteiner__PruductBox__Lists
+        .MainApp__Conteiner__PruductBox__Lists__List
+          =link_to "#", class: "MainApp__Conteiner__PruductBox__Lists__List__A" do
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Img
+              %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG"}
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Body
+              %h3.MainApp__Conteiner__PruductBox__Lists__List__A__Body__Name 
+                product3
+              .MainApp__Conteiner__PruductBox__Lists__List__A__Body__Details
+                %ul
+                  %li
+                    30000円
+                  %li
+                    .icon 
+                      = icon('fas', 'star')
+                    0 
+                %p
+                  （税込）
+        .MainApp__Conteiner__PruductBox__Lists__List
+          =link_to "#", class: "MainApp__Conteiner__PruductBox__Lists__List__A" do
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Img
+              %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"}
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Body
+              %h3.MainApp__Conteiner__PruductBox__Lists__List__A__Body__Name 
+                product3
+              .MainApp__Conteiner__PruductBox__Lists__List__A__Body__Details
+                %ul
+                  %li
+                    30000円
+                  %li
+                    .icon 
+                      = icon('fas', 'star')
+                    0
+              %p 
+                （税込）
+        .MainApp__Conteiner__PruductBox__Lists__List
+          =link_to "#", class: "MainApp__Conteiner__PruductBox__Lists__List__A" do
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Img
+              %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"}
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Body
+              %h3.MainApp__Conteiner__PruductBox__Lists__List__A__Body__Name 
+                product3
+              .MainApp__Conteiner__PruductBox__Lists__List__A__Body__Details
+                %ul
+                  %li
+                    30000円
+                  %li
+                    .icon 
+                      = icon('fas', 'star')
+                    0
+              %p 
+                （税込）
+        .MainApp__Conteiner__PruductBox__Lists__List
+          =link_to "#", class: "MainApp__Conteiner__PruductBox__Lists__List__A" do
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Img
+              %img{src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}
+            .MainApp__Conteiner__PruductBox__Lists__List__A__Body
+              %h3.MainApp__Conteiner__PruductBox__Lists__List__A__Body__Name 
+                product3
+              .MainApp__Conteiner__PruductBox__Lists__List__A__Body__Details
+                %ul
+                  %li
+                    30000円
+                  %li
+                    .icon 
+                      = icon('fas', 'star')
+                    0
+              %p 
+                （税込）
+.Appbanner
+  .Appbanner__Inner
+    %h2.Appbanner__Inner__Title
+      だれでもかんたん、人生を変えるフリマアプリ
+    %p.Appbanner__Inner__Text
+      今すぐ無料ダウンロード！
+    .Appbanner__Inner__BTN
+      .apple
+        = link_to image_tag(src= "http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class: "Appbanner__Inner__BTN__Apple"), '#'
+      .google
+        = link_to image_tag(src="http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class: "Appbanner__Inner__BTN__Google"), '#'
+
+= link_to "#" do
+  .purchase-btn
+    %span.purchase-btn__text 出品する
+    = image_tag "icon_camera.png", class: "purchase-btn__icon"
