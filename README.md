@@ -28,17 +28,17 @@
 
 ## addresses テーブル
 
-| Column                    | Type       | Options                        |
-| ------------------------- | ---------- | ------------------------------ |
-| destination_name          | string     | null: false                    |
-| destination_name_hurigana | string     | null: false                    |
-| post_code                 | string     | null: false                    |
-| prefecture(acitve_hash)   | references | null: false, foreign_key: true |
-| city                      | string     | null: false                    |
-| address                   | string     | null: false                    |
-| room_number               | string     |                                |
-| telephone_number          | string     |                                |
-| user                      | references | null: false, foreign_key: true |
+| Column                     | Type       | Options                        |
+| -------------------------- | ---------- | ------------------------------ |
+| destination_name           | string     | null: false                    |
+| destination_name_hurigana  | string     | null: false                    |
+| post_code                  | string     | null: false                    |
+| prefecture_id(acitve_hash) | integer    | null: false                    |
+| city                       | string     | null: false                    |
+| address                    | string     | null: false                    |
+| room_number                | string     |                                |
+| telephone_number           | string     |                                |
+| user                       | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -49,20 +49,20 @@
 
 ## items テーブル
 
-| Column                     | Type       | Options                        |
-| -------------------------- | ---------- | ------------------------------ |
-| name                       | string     | null: false                    |
-| price                      | integer    | null: false                    |
-| description                | text       | null: false                    |
-| stock                      | string     | null: false                    |
-| condition(acitve_hash)     | references | null: false, foreign_key: true |
-| shipping_cost(acitve_hash) | references | null: false, foreign_key: true |
-| shipping_time(acitve_hash) | references | null: false, foreign_key: true |
-| prefecture(acitve_hash)    | references | null: false, foreign_key: true |
-| category                   | references | null: false, foreign_key: true |
-| brand                      | references | foreign_key: true              |
-| seller                     | references | null: false, foreign_key: true |
-| buyer                      | references | foreign_key: true              |
+| Column                        | Type       | Options                        |
+| ----------------------------- | ---------- | ------------------------------ |
+| name                          | string     | null: false                    |
+| price                         | integer    | null: false                    |
+| description                   | text       | null: false                    |
+| stock                         | string     | null: false                    |
+| condition_id(acitve_hash)     | integer    | null: false                    |
+| shipping_cost_id(acitve_hash) | integer    | null: false                    |
+| shipping_time_id(acitve_hash) | integer    | null: false                    |
+| prefecture_id(acitve_hash)    | integer    | null: false                    |
+| category                      | references | null: false, foreign_key: true |
+| brand                         | references | foreign_key: true              |
+| seller                        | references | null: false, foreign_key: true |
+| buyer                         | references | foreign_key: true              |
 
 ### Association
 

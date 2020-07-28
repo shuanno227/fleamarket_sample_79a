@@ -3,17 +3,12 @@
   <component name="StickySelectionHighlights">
     <option name="editorHighlights">
       <map>
+        <entry key="$PROJECT_DIR$/.gitignore">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/README.md">
-          <value>
-            <PaintGroupHighlightMap />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/models/address.rb">
-          <value>
-            <PaintGroupHighlightMap />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/models/condition.rb">
           <value>
             <PaintGroupHighlightMap />
           </value>
@@ -23,27 +18,7 @@
             <PaintGroupHighlightMap />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/models/prefecture.rb">
-          <value>
-            <PaintGroupHighlightMap />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/models/shipping_cost.rb">
-          <value>
-            <PaintGroupHighlightMap />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/models/shipping_time.rb">
-          <value>
-            <PaintGroupHighlightMap />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/models/user.rb">
-          <value>
-            <PaintGroupHighlightMap />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/db/migrate/20200724021743_devise_create_users.rb">
           <value>
             <PaintGroupHighlightMap />
           </value>
