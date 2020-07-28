@@ -4,10 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :address, dependent: :destroy
-  has_many :purchases, dependent: :destroy
-  has_many :items, dependent: :destroy
-  
+  with_options dependent: :destroy do |d|
+    d.has_one :address
+    d.has_one :credit_card
+    d.has_many :seller_items, foreign_key: "seller_id", class_name: "Item"
+    d.has_many :buyer_items, foreign_key: "buyer_id", class_name: "Item"
+  end
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   VALID_KATAKANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d!@#\$%\^\&*\)\(+=._-]{7,128}\z/i
@@ -22,5 +25,5 @@ class User < ApplicationRecord
   validates :birth_year, presence: true
   validates :birth_month, presence: true
   validates :birth_day, presence: true
-  
+
 end
