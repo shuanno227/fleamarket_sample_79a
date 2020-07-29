@@ -3,12 +3,27 @@
   <component name="StickySelectionHighlights">
     <option name="editorHighlights">
       <map>
+        <entry key="$PROJECT_DIR$/.env">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/.gitignore">
           <value>
             <PaintGroupHighlightMap />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/Gemfile">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/README.md">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/models/credit_card.rb">
           <value>
             <PaintGroupHighlightMap />
           </value>
@@ -19,6 +34,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/models/user.rb">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/layouts/application.html.haml">
           <value>
             <PaintGroupHighlightMap />
           </value>
@@ -34,6 +54,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/db/migrate/20200728135816_create_brands.rb">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/db/migrate/20200729074706_create_credit_cards.rb">
           <value>
             <PaintGroupHighlightMap />
           </value>

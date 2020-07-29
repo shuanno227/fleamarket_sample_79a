@@ -25,7 +25,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e886702a-0a49-4d38-92ab-a434b60cb9bd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/fleamarket_sample_79a.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fleamarket_sample_79a.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +42,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
@@ -44,6 +58,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="create-credit_cards-table" />
+                    <option name="lastUsedInstant" value="1596008010" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="items-table-create" />
                     <option name="lastUsedInstant" value="1595816070" />
@@ -82,7 +100,13 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="rails g scaffold credit_card" />
+      <command value="bundle install" />
+    </option>
   </component>
   <component name="RunManager" selected="Rails.Development: fleamarket_sample_79a">
     <configuration name="Development: fleamarket_sample_79a" type="RailsRunConfigurationType" factoryName="Rails">
@@ -199,7 +223,8 @@
       <workItem from="1595794820665" duration="241000" />
       <workItem from="1595795079617" duration="363000" />
       <workItem from="1595815923985" duration="17785000" />
-      <workItem from="1596004096434" duration="2530000" />
+      <workItem from="1596004096434" duration="3023000" />
+      <workItem from="1596008303441" duration="10606000" />
     </task>
     <servers />
   </component>
@@ -232,24 +257,44 @@
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1221" y="203" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596017356307">
+      <screen x="-1920" y="-125" width="1920" height="1057" />
+    </state>
+    <state x="-1221" y="203" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596017356307" />
     <state x="-1820" y="-25" width="1720" height="857" key="DiffContextDialog" timestamp="1595846369590">
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
     <state x="-1820" y="-25" width="1720" height="857" key="DiffContextDialog/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1595846369590" />
-    <state x="-1723" y="-94" width="1070" height="773" key="SettingsEditor" timestamp="1595904901739">
+    <state width="1878" height="276" key="GridCell.Tab.0.bottom" timestamp="1596016834355">
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
-    <state x="-1723" y="-94" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1595904901739" />
+    <state width="1878" height="276" key="GridCell.Tab.0.bottom/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596016834355" />
+    <state width="1878" height="276" key="GridCell.Tab.0.center" timestamp="1596016834355">
+      <screen x="-1920" y="-125" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="276" key="GridCell.Tab.0.center/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596016834355" />
+    <state width="1878" height="276" key="GridCell.Tab.0.left" timestamp="1596016834354">
+      <screen x="-1920" y="-125" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="276" key="GridCell.Tab.0.left/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596016834354" />
+    <state width="1878" height="276" key="GridCell.Tab.0.right" timestamp="1596016834355">
+      <screen x="-1920" y="-125" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="276" key="GridCell.Tab.0.right/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596016834355" />
+    <state x="-1723" y="-94" width="1070" height="773" key="SettingsEditor" timestamp="1596013143606">
+      <screen x="-1920" y="-125" width="1920" height="1057" />
+    </state>
+    <state x="-1723" y="-94" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596013143606" />
     <state x="148" y="49" width="1070" height="773" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@0.23.1440.877" timestamp="1595795499309" />
-    <state x="-1407" y="102" key="run.anything.popup" timestamp="1596005024768">
+    <state x="-1459" y="140" width="1148" height="675" key="run.anything.popup" timestamp="1596016814888">
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
-    <state x="-1407" y="102" key="run.anything.popup/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596005024768" />
+    <state x="-1459" y="140" width="1148" height="675" key="run.anything.popup/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596016814888" />
     <state x="385" y="211" key="run.anything.popup/0.23.1440.877/-1920.-125.1920.1057@0.23.1440.877" timestamp="1595792771723" />
-    <state x="-1407" y="104" width="894" height="815" key="search.everywhere.popup" timestamp="1596004723136">
+    <state x="-1407" y="104" width="894" height="815" key="search.everywhere.popup" timestamp="1596017866547">
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
-    <state x="-1407" y="104" width="894" height="815" key="search.everywhere.popup/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596004723136" />
+    <state x="-1407" y="104" width="894" height="815" key="search.everywhere.popup/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596017866547" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/-1920.-125.1920.1057@0.23.1440.877" timestamp="1595792775967" />
     <state x="-1230" y="317" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1595904355577">
       <screen x="-1920" y="-125" width="1920" height="1057" />
