@@ -25,11 +25,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e886702a-0a49-4d38-92ab-a434b60cb9bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fleamarket_sample_79a.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fleamarket_sample_79a.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200724110024_create_items.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20200724110024_create_items.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +199,7 @@
       <workItem from="1595794820665" duration="241000" />
       <workItem from="1595795079617" duration="363000" />
       <workItem from="1595815923985" duration="17785000" />
-      <workItem from="1596004096434" duration="701000" />
+      <workItem from="1596004096434" duration="1120000" />
     </task>
     <servers />
   </component>
@@ -232,6 +228,9 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="-1820" y="-25" width="1720" height="857" key="DiffContextDialog" timestamp="1595846369590">
       <screen x="-1920" y="-125" width="1920" height="1057" />
@@ -242,14 +241,15 @@
     </state>
     <state x="-1723" y="-94" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1595904901739" />
     <state x="148" y="49" width="1070" height="773" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@0.23.1440.877" timestamp="1595795499309" />
-    <state x="385" y="211" key="run.anything.popup" timestamp="1595792771723">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="385" y="211" key="run.anything.popup/0.23.1440.877/-1920.-125.1920.1057@0.23.1440.877" timestamp="1595792771723" />
-    <state x="-1407" y="104" width="894" height="815" key="search.everywhere.popup" timestamp="1595817984673">
+    <state x="-1407" y="102" key="run.anything.popup" timestamp="1596005024768">
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
-    <state x="-1407" y="104" width="894" height="815" key="search.everywhere.popup/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1595817984673" />
+    <state x="-1407" y="102" key="run.anything.popup/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596005024768" />
+    <state x="385" y="211" key="run.anything.popup/0.23.1440.877/-1920.-125.1920.1057@0.23.1440.877" timestamp="1595792771723" />
+    <state x="-1407" y="104" width="894" height="815" key="search.everywhere.popup" timestamp="1596004723136">
+      <screen x="-1920" y="-125" width="1920" height="1057" />
+    </state>
+    <state x="-1407" y="104" width="894" height="815" key="search.everywhere.popup/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596004723136" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/-1920.-125.1920.1057@0.23.1440.877" timestamp="1595792775967" />
     <state x="-1230" y="317" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1595904355577">
       <screen x="-1920" y="-125" width="1920" height="1057" />
