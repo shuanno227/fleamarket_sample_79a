@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_140841) do
+ActiveRecord::Schema.define(version: 2020_07_31_072943) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "destination_name", null: false
@@ -41,22 +41,28 @@ ActiveRecord::Schema.define(version: 2020_07_28_140841) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_images_on_item_id"
+  end
+
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name", null: false
     t.integer "price", null: false
     t.text "description", null: false
-    t.string "stock", null: false
     t.integer "condition_id", null: false
     t.integer "shipping_cost_id", null: false
     t.integer "shipping_time_id", null: false
     t.integer "prefecture_id", null: false
     t.bigint "category_id", null: false
-    t.bigint "brand_id"
     t.bigint "buyer_id"
     t.bigint "seller_id", null: false
-    t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.string "brand"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
@@ -84,6 +90,6 @@ ActiveRecord::Schema.define(version: 2020_07_28_140841) do
   end
 
   add_foreign_key "addresses", "users"
-  add_foreign_key "items", "brands"
+  add_foreign_key "images", "items"
   add_foreign_key "items", "categories"
 end

@@ -1,0 +1,175 @@
+.Exhibition{
+  // ヘッダーの変更に伴い以下は要変更
+  height: 100%;
+  padding-top: 100px;
+  background-color: #F2F2F2;
+  &__content {
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 24px 0;
+    .registration {
+      margin: 0 auto;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 32px;
+      text-align: center;
+    }
+    .exhibitionForm {
+      width: 90%;
+      margin: 0 auto;
+      padding: 0 0 36px 0;
+      .field-title {
+        color: #888888;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 0 24px 0;
+      }
+      .FormLabel {
+        display: flex;
+        width: 48%;
+        margin: 0 0 12px 0;
+        .title {
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .MustMessage,
+        .NotMustMessage {
+          font-size: 12px;
+          color: #ffffff;
+          background-color: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+        }
+        .NotMustMessage {
+          background-color: gray;
+        }
+      }
+      p {
+        margin: 0 0 12px 0;
+      }
+      .input {
+        width: 100%;
+        margin: 8px 0 0;
+      }
+      .input-default {
+        text-decoration: none;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #cccccc;
+        background-color: #ffffff;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      .input-text {
+        height: 150px;
+      }
+      .field {
+        margin: 0 0 20px 0;
+        .field_with_errors {
+          display: contents;
+        }
+        
+      }
+      .field-price {
+        display: flex;
+        position: relative;
+        height: 48px;
+        align-items: center;
+        .dollar {
+          font-size: 14px;
+        }
+        .input-price {
+          width: 50%;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+      }
+      .listing-form-box{
+        .listing-product-detail__category{
+          .FormLabel{
+            display: flex;
+          }
+        }
+      }
+      .actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+        .nextBtn {
+          width: 60%;
+          padding: 12px 0;
+          background-color: #34C0C3;
+          font-size: 14px;
+          color: #ffffff;
+          border-radius: 4px;
+          border: none;
+        }
+      }
+      .item-image {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 20%;
+      }
+      #image-box-1 {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #image-box__container{
+        background-color: #F2F2F2;
+        height: 100px;
+        .input-area {
+          height: 100%;
+          width: 100%;
+          label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px dashed #cccccc;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+      .item-num-0{
+        width: 100%;
+      }
+      .item-num-1{
+        width: 80%;
+      }
+      .item-num-2{
+        width: 60%;
+      }
+      .item-num-3{
+        width: 40%;
+      }
+      .item-num-4{
+        width: 20%;
+      }
+      //下段のfile_field
+      .item-num-5{
+        width: 100%;
+      }
+      .item-num-6{
+        width: 80%;
+      }
+      .item-num-7{
+        width: 60%;
+      }
+      .item-num-8{
+        width: 40%;
+      }
+      .item-num-9{
+        width: 20%;
+      }
+    }
+  }
+}
+
