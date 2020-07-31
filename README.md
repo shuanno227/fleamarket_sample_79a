@@ -54,7 +54,6 @@
 | name                          | string     | null: false                    |
 | price                         | integer    | null: false                    |
 | description                   | text       | null: false                    |
-| stock                         | string     | null: false                    |
 | condition_id(acitve_hash)     | integer    | null: false                    |
 | shipping_cost_id(acitve_hash) | integer    | null: false                    |
 | shipping_time_id(acitve_hash) | integer    | null: false                    |
