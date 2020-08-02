@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :credit_cards
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -10,4 +9,6 @@ Rails.application.routes.draw do
   root to: "items#index"
   resources :items
   resources :users
+  resources :credit_cards, only: [:index, :new, :create, :destroy] do
+  end
 end

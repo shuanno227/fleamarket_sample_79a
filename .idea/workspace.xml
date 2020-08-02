@@ -25,15 +25,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e886702a-0a49-4d38-92ab-a434b60cb9bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/amex.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/diners.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/discover.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/jcb.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/master.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/saison.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/visa.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/payjp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/_credit_card.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fleamarket_sample_79a.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fleamarket_sample_79a.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/credit_cards_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/credit_cards_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/credit_cards/_form.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/credit_cards/_form.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/credit_cards/index.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/credit_cards/index.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/credit_cards/new.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/credit_cards/new.html.haml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,6 +87,9 @@
       </RecentBranches>
     </option>
   </component>
+  <component name="NamedScopeManager">
+    <scope name="Git Scope" pattern="" />
+  </component>
   <component name="ProjectId" id="1f7YygsI3wpZlAcqtmnEWauIRrN" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -92,7 +103,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/assets/images/creditcards" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -100,7 +112,15 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/images/creditcards" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/images/creditcards" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -224,7 +244,9 @@
       <workItem from="1595795079617" duration="363000" />
       <workItem from="1595815923985" duration="17785000" />
       <workItem from="1596004096434" duration="3023000" />
-      <workItem from="1596008303441" duration="10606000" />
+      <workItem from="1596008303441" duration="17762000" />
+      <workItem from="1596129745636" duration="17022000" />
+      <workItem from="1596191399104" duration="16639000" />
     </task>
     <servers />
   </component>
@@ -257,10 +279,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1360" y="69" width="800" height="765" key="#Intentions" timestamp="1596163094785">
+      <screen x="-1920" y="-125" width="1920" height="1057" />
+    </state>
+    <state x="-1360" y="69" width="800" height="765" key="#Intentions/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596163094785" />
     <state x="-1221" y="203" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1596017356307">
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
     <state x="-1221" y="203" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596017356307" />
+    <state x="-1075" y="247" key="#通知" timestamp="1596193622272">
+      <screen x="-1920" y="-125" width="1920" height="1057" />
+    </state>
+    <state x="-1075" y="247" key="#通知/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596193622272" />
     <state x="-1820" y="-25" width="1720" height="857" key="DiffContextDialog" timestamp="1595846369590">
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
@@ -281,20 +311,20 @@
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
     <state width="1878" height="276" key="GridCell.Tab.0.right/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596016834355" />
-    <state x="-1723" y="-94" width="1070" height="773" key="SettingsEditor" timestamp="1596013143606">
+    <state x="-1920" y="-125" width="960" height="1057" key="SettingsEditor" timestamp="1596193677587">
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
-    <state x="-1723" y="-94" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596013143606" />
+    <state x="-1920" y="-125" width="960" height="1057" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596193677587" />
     <state x="148" y="49" width="1070" height="773" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@0.23.1440.877" timestamp="1595795499309" />
     <state x="-1459" y="140" width="1148" height="675" key="run.anything.popup" timestamp="1596016814888">
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
     <state x="-1459" y="140" width="1148" height="675" key="run.anything.popup/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596016814888" />
     <state x="385" y="211" key="run.anything.popup/0.23.1440.877/-1920.-125.1920.1057@0.23.1440.877" timestamp="1595792771723" />
-    <state x="-1407" y="104" width="894" height="815" key="search.everywhere.popup" timestamp="1596017866547">
+    <state x="-1407" y="104" width="894" height="815" key="search.everywhere.popup" timestamp="1596215240072">
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
-    <state x="-1407" y="104" width="894" height="815" key="search.everywhere.popup/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596017866547" />
+    <state x="-1407" y="104" width="894" height="815" key="search.everywhere.popup/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596215240072" />
     <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/-1920.-125.1920.1057@0.23.1440.877" timestamp="1595792775967" />
     <state x="-1230" y="317" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1595904355577">
       <screen x="-1920" y="-125" width="1920" height="1057" />
