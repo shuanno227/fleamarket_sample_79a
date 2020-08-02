@@ -25,23 +25,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e886702a-0a49-4d38-92ab-a434b60cb9bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/amex.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/diners.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/discover.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/jcb.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/master.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/saison.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/images/creditcards/visa.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/javascripts/payjp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/_credit_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/_flash.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/layouts/_notifications.html.haml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/railways.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/railways.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/credit_cards_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/credit_cards_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/credit_cards/_form.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/credit_cards/_form.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/credit_cards/index.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/credit_cards/index.html.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/credit_cards/new.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/credit_cards/new.html.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.haml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -246,7 +237,7 @@
       <workItem from="1596004096434" duration="3023000" />
       <workItem from="1596008303441" duration="17762000" />
       <workItem from="1596129745636" duration="17022000" />
-      <workItem from="1596191399104" duration="16639000" />
+      <workItem from="1596191399104" duration="23684000" />
     </task>
     <servers />
   </component>
@@ -316,6 +307,10 @@
     </state>
     <state x="-1920" y="-125" width="960" height="1057" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596193677587" />
     <state x="148" y="49" width="1070" height="773" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@0.23.1440.877" timestamp="1595795499309" />
+    <state x="-1283" y="12" width="645" height="783" key="find.popup" timestamp="1596387809047">
+      <screen x="-1920" y="-125" width="1920" height="1057" />
+    </state>
+    <state x="-1283" y="12" width="645" height="783" key="find.popup/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596387809047" />
     <state x="-1459" y="140" width="1148" height="675" key="run.anything.popup" timestamp="1596016814888">
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>

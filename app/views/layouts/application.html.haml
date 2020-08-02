@@ -33,6 +33,7 @@
           .header__bottom-right
             = link_to "ログイン", new_user_session_path 
             = link_to "新規登録",  new_user_registration_path
+    = render 'layouts/notifications'
     = yield
     %footer.footer
       .footer__top

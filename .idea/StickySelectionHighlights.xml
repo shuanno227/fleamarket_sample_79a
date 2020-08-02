@@ -38,6 +38,11 @@
             <PaintGroupHighlightMap />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/assets/stylesheets/_flash.scss">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/assets/stylesheets/application.scss">
           <value>
             <PaintGroupHighlightMap />
@@ -79,6 +84,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/views/credit_cards/new.html.haml">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/layouts/_notifications.html.haml">
           <value>
             <PaintGroupHighlightMap />
           </value>
