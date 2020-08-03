@@ -66,9 +66,13 @@
         %span
           (税込)送料込み
     .item-show__box__button
-      %button{type: "submit", class: "button"}
-        .letter
-          購入画面に進む
+      - if user_signed_in? && current_user.id == @item.seller_id
+        = link_to "商品編集",edit_item_path(@item.id), class: "button"
+          
+      - else
+        %button{type: "submit", class: "button"}
+          .letter
+            購入画面に進む
     .item-show__box__description
       %p Levi'sのTシャツです。
       %p  数回着用しました。
