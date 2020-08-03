@@ -1,21 +1,26 @@
 .mypage-main.col-9
-  %h2.header_title
-    支払い方法
-  .single-container
-    %section.credit_card_section
-      %h3 クレジットカード一覧
-      - if @card.present?
-        .container
-          .credit_card-info
-            -# indexメソッドで定義した@card_imageを呼び出し、画像をcredit_cardsというフォルダを作り、入れておく
-            = image_tag "credit_cards/#{@card_image}",width:'34',height:'20', alt:'master-card'
-            %p.credit_card-info__number
-              = "**** **** **** " + @card_info.last4 #クレジットカードの下４桁を表示
-            %p.credit_card-info__period
-            = @exp_month + " / " + @exp_year
-            = button_to "削除する", credit_card_path(@card), method: :delete, class:"credit_card-info__delete"
-      - else
-        .new-card
-          = link_to new_credit_card_path, class:"new-card-btn" do
-            %i.far.fa-credit-card
-            クレジットカードを追加する
+  .content
+    %h2.header_title
+      支払い方法
+    .single-container
+      %section.credit_card_section
+        %h3.credit_card_view
+          クレジットカード一覧
+        - if @card.present?
+          .container
+            .credit_card-info
+              -# indexメソッドで定義した@card_imageを呼び出し、画像をcredit_cardsというフォルダを作り、入れておく
+              = image_tag "creditcards/#{@card_image}",width:'34',height:'20', alt:'master-card'
+              %p.credit_card-info__number
+                = "**** **** **** " + @card_info.last4 #クレジットカードの下４桁を表示
+              %p.credit_card-info__period
+              = @exp_month + " / " + @exp_year
+              = button_to "削除する", credit_card_path(@card), method: :delete, class:"credit_card-info__delete"
+        - else
+          .new-card
+            = link_to new_credit_card_path, class:"new-card-btn" do
+              %i.far.fa-credit-card
+              クレジットカードを追加する
+      %p.about
+        %span
+        = link_to '支払い方法について', root_path, class:'about__registered'

@@ -1,11 +1,100 @@
+.mypage-main {
+  width: 700px;
+  margin: 24px auto 0;
+
+  .content {
+    background-color: #FFFFFF;
+
+    .header_title {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+      padding: 8px 24px;
+      border-bottom: 1px solid #F5F5F5;
+      text-align: center;
+    }
+
+    .single-container {
+      padding: 64px;
+
+      .credit_card_section {
+        border-bottom: 1px solid #eeeeee;
+
+        .credit_card_view {
+          max-width: 320px;
+          margin: 0 auto;
+          font-weight: bold;
+        }
+      }
+
+      .container {
+        padding: 24px 0;
+
+        .credit_card-info {
+          position: relative;
+          max-width: 320px;
+          margin: 0 auto;
+
+          &__delete {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 4px 6px;
+            background-color: #FFFFFF;
+            border-radius: 3px;
+            border: 1px solid #ea352d;
+            color: #ea352d;
+          }
+        }
+      }
+
+      .new-card {
+        padding: 24px 0;
+        border-bottom: 1px solid #F5F5F5;
+
+        &-btn {
+          text-decoration: none;
+          margin-bottom: 8px !important;
+
+          background-color: #0099e8;
+          border: 1px solid #0099e8;
+          color: #FFFFFF;
+
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border-radius: 4px;
+          text-align: center;
+        }
+
+        .fa-credit-card {
+          margin-right: 16px;
+        }
+      }
+
+      .about {
+        text-align: right;
+        display: block;
+        margin: 40px 0 0;
+
+        &__registered {
+          color: #0099e8;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
 .form {
   &__upper {
     margin: 0 auto;
     max-width: 343px;
 
-    p {
-      text-align: center;
-    }
+    //p {
+    //  text-align: center;
+    //}
 
     &__group {
       font-size: 14px;
@@ -28,7 +117,7 @@
       }
 
       .form-require {
-        background-color: $green;
+        background-color: #0099e8;
         color: #fff;
         font-size: 12px;
         margin: 0 0 0 8px;
@@ -36,15 +125,15 @@
         border-radius: 2px;
         vertical-align: top;
 
-        &-optional {
-          background-color: gray;
-          color: #fff;
-          font-size: 12px;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          vertical-align: top;
-        }
+        //&-optional {
+        //  background-color: gray;
+        //  color: #fff;
+        //  font-size: 12px;
+        //  margin: 0 0 0 8px;
+        //  padding: 2px 4px;
+        //  border-radius: 2px;
+        //  vertical-align: top;
+        //}
       }
 
       .input-default {
@@ -68,42 +157,42 @@
           line-height: 1.5;
           font-size: 16px;
 
-          &.exp {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-          }
+          //&.exp {
+          //  -webkit-appearance: none;
+          //  -moz-appearance: none;
+          //  appearance: none;
+          //}
         }
 
-        &-select {
-          width: 76px;
-          margin-top: 8px;
-          height: 45px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          background: #fff;
-          line-height: 1.5;
-          font-size: 16px;
-        }
+        //&-select {
+        //  width: 76px;
+        //  margin-top: 8px;
+        //  height: 45px;
+        //  border-radius: 4px;
+        //  border: 1px solid #ccc;
+        //  background: #fff;
+        //  line-height: 1.5;
+        //  font-size: 16px;
+        //}
       }
 
-      h3 {
-        font-size: 16px;
-        font-weight: bold;
-      }
+      //h3 {
+      //  font-size: 16px;
+      //  font-weight: bold;
+      //}
 
-      .attention {
-        margin: 8px 0 0;
-      }
+      //.attention {
+      //  margin: 8px 0 0;
+      //}
 
-      .agree {
-        text-align: center;
-      }
+      //.agree {
+      //  text-align: center;
+      //}
 
-      a {
-        color: #0099e8;
-        text-decoration: none;
-      }
+      //a {
+      //  color: #0099e8;
+      //  text-decoration: none;
+      //}
 
       span {
         margin: 0 2px;
@@ -117,14 +206,14 @@
           text-decoration: none;
         }
 
-        .fa-chevron-right {
-          color: #0099e8;
-        }
-
-        .fa-question-circle {
-          color: #0099e8;
-          font-size: 1rem
-        }
+        //.fa-chevron-right {
+        //  color: #0099e8;
+        //}
+        //
+        //.fa-question-circle {
+        //  color: #0099e8;
+        //  font-size: 1rem;
+        //}
       }
     }
 
@@ -135,69 +224,70 @@
     }
   }
 
-  &__bottom {
-    margin: 0 auto;
-    max-width: 343px;
-
-    .registance {
-      text-align: right;
-    }
-  }
+  //&__bottom {
+  //  margin: 0 auto;
+  //  max-width: 343px;
+  //
+  //  .registance {
+  //    text-align: right;
+  //  }
+  //}
 
   .btn-default {
     width: 100%;
     height: 50px;
-    background-color: $green;
+    background-color: #0099e8;
     color: #FFFFFF;
     font-size: 15px;
+    border: none;
     cursor: pointer;
   }
 
-  .btn-registration {
-    color: #fff;
-    border-radius: 4px;
-    width: 50%;
-    line-height: 48px;
-    border: 1px solid transparent;
-    text-align: center;
-    margin: 0 auto;
-    position: relative;
-
-    i {
-      font-size: 20px;
-      position: absolute;
-      top: 13.5px;
-      left: 15px;
-    }
-
-    .about__registered {
-      color: #FFFFFF;
-      text-decoration: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-    }
-
-    &.email {
-      background-color: $green;
-    }
-
-    &.facebook {
-      background-color: #385184;
-    }
-
-    &.google {
-      background-color: #FFFFFF;
-      color: black;
-      background: #fff image-url('google.svg') no-repeat 3px top;
-      border: #979797 solid 1px;
-    }
-
-    &:not( :first-child ) {
-      margin-top: 16px;
-    }
-  }
+  //.btn-registration {
+  //  color: #fff;
+  //  border-radius: 4px;
+  //  width: 50%;
+  //  line-height: 48px;
+  //  border: 1px solid transparent;
+  //  text-align: center;
+  //  margin: 0 auto;
+  //  position: relative;
+  //
+  //  i {
+  //    font-size: 20px;
+  //    position: absolute;
+  //    top: 13.5px;
+  //    left: 15px;
+  //  }
+  //
+  //  .about__registered {
+  //    color: #FFFFFF;
+  //    text-decoration: none;
+  //    position: absolute;
+  //    top: 0;
+  //    left: 0;
+  //    width: 100%;
+  //    height: 100%;
+  //    cursor: pointer;
+  //  }
+  //
+  //  &.email {
+  //    background-color: #0099e8;
+  //  }
+  //
+  //  &.facebook {
+  //    background-color: #385184;
+  //  }
+  //
+  //  &.google {
+  //    background-color: #FFFFFF;
+  //    color: black;
+  //    background: #fff image-url('google.svg') no-repeat 3px top;
+  //    border: #979797 solid 1px;
+  //  }
+  //
+  //  &:not( :first-child ) {
+  //    margin-top: 16px;
+  //  }
+  //}
 }

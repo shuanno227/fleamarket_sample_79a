@@ -98,6 +98,11 @@
             <PaintGroupHighlightMap />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/views/users/show.html.haml">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/config/routes.rb">
           <value>
             <PaintGroupHighlightMap />
