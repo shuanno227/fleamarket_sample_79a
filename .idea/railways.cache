@@ -7,13 +7,15 @@
                         user_password PATCH  /users/password(.:format)                                                                devise/passwords#update
                                       PUT    /users/password(.:format)                                                                devise/passwords#update
                                       POST   /users/password(.:format)                                                                devise/passwords#create
-             cancel_user_registration GET    /users/cancel(.:format)                                                                  devise/registrations#cancel
-                new_user_registration GET    /users/sign_up(.:format)                                                                 devise/registrations#new
-               edit_user_registration GET    /users/edit(.:format)                                                                    devise/registrations#edit
-                    user_registration PATCH  /users(.:format)                                                                         devise/registrations#update
-                                      PUT    /users(.:format)                                                                         devise/registrations#update
-                                      DELETE /users(.:format)                                                                         devise/registrations#destroy
-                                      POST   /users(.:format)                                                                         devise/registrations#create
+             cancel_user_registration GET    /users/cancel(.:format)                                                                  users/registrations#cancel
+                new_user_registration GET    /users/sign_up(.:format)                                                                 users/registrations#new
+               edit_user_registration GET    /users/edit(.:format)                                                                    users/registrations#edit
+                    user_registration PATCH  /users(.:format)                                                                         users/registrations#update
+                                      PUT    /users(.:format)                                                                         users/registrations#update
+                                      DELETE /users(.:format)                                                                         users/registrations#destroy
+                                      POST   /users(.:format)                                                                         users/registrations#create
+                            addresses GET    /addresses(.:format)                                                                     users/registrations#new_address
+                                      POST   /addresses(.:format)                                                                     users/registrations#create_address
                                  root GET    /                                                                                        items#index
                                 items GET    /items(.:format)                                                                         items#index
                                       POST   /items(.:format)                                                                         items#create
@@ -23,6 +25,19 @@
                                       PATCH  /items/:id(.:format)                                                                     items#update
                                       PUT    /items/:id(.:format)                                                                     items#update
                                       DELETE /items/:id(.:format)                                                                     items#destroy
+                                users GET    /users(.:format)                                                                         users#index
+                                      POST   /users(.:format)                                                                         users#create
+                             new_user GET    /users/new(.:format)                                                                     users#new
+                            edit_user GET    /users/:id/edit(.:format)                                                                users#edit
+                                 user GET    /users/:id(.:format)                                                                     users#show
+                                      PATCH  /users/:id(.:format)                                                                     users#update
+                                      PUT    /users/:id(.:format)                                                                     users#update
+                                      DELETE /users/:id(.:format)                                                                     users#destroy
+                      buy_credit_card GET    /credit_cards/:id/buy(.:format)                                                          credit_cards#buy
+                         credit_cards GET    /credit_cards(.:format)                                                                  credit_cards#index
+                                      POST   /credit_cards(.:format)                                                                  credit_cards#create
+                      new_credit_card GET    /credit_cards/new(.:format)                                                              credit_cards#new
+                          credit_card DELETE /credit_cards/:id(.:format)                                                              credit_cards#destroy
         rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                  action_mailbox/ingresses/postmark/inbound_emails#create
            rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                     action_mailbox/ingresses/relay/inbound_emails#create
         rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                  action_mailbox/ingresses/sendgrid/inbound_emails#create
