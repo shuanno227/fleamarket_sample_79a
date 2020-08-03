@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
   root to: "items#index"
-  resources :items
+  resources :items do
+    member do
+      get 'select_category_index'
+    end
+  end  
   resources :users
 end

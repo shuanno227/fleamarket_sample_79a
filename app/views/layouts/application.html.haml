@@ -30,17 +30,17 @@
                 %ul.category__parent.category__list
                   - @parents.each do |parent|
                     %li
-                      = link_to "#", class: "category__parent--name" do
+                      = link_to "/items/#{parent.id}/select_category_index", class: "category__parent--name" do
                         = parent.name
                       %ul.category__child.category__list
                         - parent.children.each do |child|
                           %li
-                            = link_to "#", class: "category__child--name" do
+                            = link_to "/items/#{child.id}/select_category_index", class: "category__child--name" do
                               = child.name
                             %ul.category__grandchild.category__list
                               - child.children.each do |grandchild|
                                 %li
-                                  = link_to "#", class: " category__child--name" do
+                                  = link_to "/items/#{grandchild.id}/select_category_index", class: " category__child--name" do
                                     = grandchild.name 
           .bland                          
             = link_to "ブランド", "#" 
