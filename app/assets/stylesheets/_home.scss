@@ -81,47 +81,47 @@
     }
   }
 }
-.category__child, .category__parent, .category__grandchild{
-  display: none;
-  z-index: 99;
-}
 
-.category__icon,.brands__icon{
-  color: #3CC9CE;
-}
-
-// カテゴリーの大枠の要素の共通項
-.category__list{
-  position: absolute;
-  height: 560px;
-  background-color: white;
-  border-right: 1px solid whitesmoke;
-  padding: 0 20px 0 0;
-}
-
-// 子要素はカテゴリー名の共通項
-.category__child--name{
-  width: 100%;
-  color: black;
-  display: inline-block;
-  padding: 3px 15px;
-  font-size: 11px;
-  letter-spacing: 2px;
-}
-.category__child--name:hover {
-  background-color: rgba(211, 211, 211, .7);
-  width: 100%;
-  padding: 0 20px;
-
-}
-.category__parent--name:hover {
-  background-color: rgba(135, 206, 235, .8);
-}
-
-.categories{
+.categories {
   padding-bottom: 10px;
+  &__search {
+    padding-bottom: 20px;
+  }
+  &__child,
+  &__parent, 
+  &__grandchild {
+    display: none;
+    z-index: 99;  
+  } 
+  &__icon,
+  .brands__icon {
+    color: #3CC9CE;
+  }
+  &__list { // カテゴリーの大枠の要素の共通項
+    position: absolute;
+    height: 560px;
+    background-color: white;
+    border-right: 1px solid whitesmoke;
+    padding: 0 20px 0 0;
+  }
+  &__child--name { // 子要素はカテゴリー名の共通項
+    width: 100%;
+    color: black;
+    display: inline-block;
+    padding: 3px 15px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    &:hover {
+      background-color: rgba(211, 211, 211, .7);
+      width: 100%;
+      padding: 0 20px;  
+    }  
+  }
+  &__parent--name:hover {
+    background-color: rgba(135, 206, 235, .8);
+  }
   &:hover{
-    .category__parent{
+    .categories__parent{
       top: 122px;
       display: block;
       &--name{
@@ -134,14 +134,14 @@
       }
       li {
         &:hover{
-          .category__child{
+          .categories__child{
             width: 100%;
             display: block;
             top: 0;
             left: 240px;
             li {
               &:hover{
-                .category__grandchild{
+                .categories__grandchild{
                   width: 100%;
                   display: block;
                   top: 0;

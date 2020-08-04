@@ -24,23 +24,23 @@
           .categories
             %ul
               %li
-                = link_to "#", class: "category__search search__btn" do
-                  %i.fas.fa-bars.category__icon
+                = link_to "#", class: "categories__search search__btn" do
+                  %i.fas.fa-bars.categories__icon
                   カテゴリーから探す
-                %ul.category__parent.category__list
+                %ul.categories__parent.categories__list
                   - @parents.each do |parent|
                     %li
-                      = link_to "/items/#{parent.id}/select_category_index", class: "category__parent--name" do
+                      = link_to "/items/#{parent.id}/select_category_index", class: "categories__parent--name" do
                         = parent.name
-                      %ul.category__child.category__list
+                      %ul.categories__child.categories__list
                         - parent.children.each do |child|
                           %li
-                            = link_to "/items/#{child.id}/select_category_index", class: "category__child--name" do
+                            = link_to "/items/#{child.id}/select_category_index", class: "categories__child--name" do
                               = child.name
-                            %ul.category__grandchild.category__list
+                            %ul.categories__grandchild.categories__list
                               - child.children.each do |grandchild|
                                 %li
-                                  = link_to "/items/#{grandchild.id}/select_category_index", class: " category__child--name" do
+                                  = link_to "/items/#{grandchild.id}/select_category_index", class: " categories__child--name" do
                                     = grandchild.name 
           .bland                          
             = link_to "ブランド", "#" 
