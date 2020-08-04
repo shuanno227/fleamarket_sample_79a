@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :category
   protect_from_forgery with: :exception
-  prepend_before_action :category
 
   private
   

@@ -5,7 +5,7 @@
     background-color: #fff;
     width: 700px;
     margin: 50px auto;
-    padding: 50px;
+    //padding: 50px;
     h2 {
       color: #333333;
       font-size: 24px;
@@ -32,6 +32,37 @@
         background-color: #3EC9CF;
         padding: 5px 15px;
         border-radius: 5px;
+      }
+    }
+    &__items {
+      .ItemBoxes {
+        &__title {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        .ItemBox {
+          border-bottom: 1px solid #cccccc;
+          min-height: 80px;
+          display: flex;
+          align-items: center;
+          padding: 0 20px;
+          position: relative;
+          text-decoration: none;
+          color: black;
+          z-index: 2;
+          &__name {
+            margin-left: 20px;
+            font-size: 12px;
+          }
+          .icon {
+            position: absolute;
+            right: 20px;
+          }
+        }
+        .ItemBox:hover,
+        .ItemBox:active{
+          background-color: rgba(109, 109, 109, 0.1);
+        }
       }
     }
   }

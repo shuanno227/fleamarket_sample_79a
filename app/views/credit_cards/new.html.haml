@@ -1,0 +1,15 @@
+-# = render 'shared/main-header'
+-# .container-fluid
+-#   .row.py-5.w-100
+-#     = render 'shared/mypage-side'
+
+.mypage-main.col-9
+  .content
+    %h2.header_title
+      クレジットカード情報の入力
+    .single-container
+      .rgs-main__section
+        = render 'form'
+      -#.payment-explain
+      -#  = fa_icon 'chevron-right', class:"arrows"
+      -#  = link_to '支払い方法について', '#'

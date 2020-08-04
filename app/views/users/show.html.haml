@@ -7,4 +7,15 @@
         = @user.nickname
     .user__my-page__box__button
       .user__my-page__box__button-credit
-        = link_to "クレジットカード登録", "#", class: "button" 
+        = link_to "クレジットカード登録", credit_cards_path, class: "button"
+    .user__my-page__box__items
+      .ItemBoxes
+        .ItemBoxes__title 出品した商品
+        - @items.each do |item|
+        
+          = link_to item, class: "ItemBox" do
+            = image_tag Image.where(item_id: item)[0].image.url
+            .ItemBox__name
+              = item.name
+            %i.fas.fa-chevron-right.icon
+

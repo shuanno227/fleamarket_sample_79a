@@ -54,7 +54,6 @@
 | name                          | string     | null: false                    |
 | price                         | integer    | null: false                    |
 | description                   | text       | null: false                    |
-| stock                         | string     | null: false                    |
 | condition_id(acitve_hash)     | integer    | null: false                    |
 | shipping_cost_id(acitve_hash) | integer    | null: false                    |
 | shipping_time_id(acitve_hash) | integer    | null: false                    |
@@ -119,13 +118,10 @@
 
 ## credit_cards テーブル
 
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| card_number      | integer    | null: false, unique: true      |
-| expiration_year  | integer    | null: false                    |
-| expiration_month | integer    | null: false                    |
-| security_code    | integer    | null: false                    |
-| user             | references | null: false, foreign_key: true |
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| payjp_id | string     | null: false                    |
+| user     | references | null: false, foreign_key: true |
 
 ### Association
 
