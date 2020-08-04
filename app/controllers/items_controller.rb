@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
+  before_action :index_category_set, only: :index
+
   def index
+    @items = Item.includes([:images]).order(created_at: :desc)
   end
 
   def new
@@ -137,6 +140,19 @@ class ItemsController < ApplicationController
 
 
   private
+
+  def index_category_set
+    array = [1, 2, 3, 4]
+    for num in array do
+      search_anc = Category.where('ancestry LIKE(?)', "#{num}/%")
+      ids = []
+      search_anc.each do |i|
+        ids << i[:id]
+      end
+      @items = Item.where(category_id: ids).order("id DESC").limit(10)
+      instance_variable_set("@cat_no#{num}", @items)
+    end
+  end
 
   def item_params
     params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
