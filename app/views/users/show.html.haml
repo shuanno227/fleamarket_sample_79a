@@ -12,7 +12,7 @@
       .ItemBoxes
         .ItemBoxes__title 出品した商品
         - @items.each do |item|
-          
+        
           = link_to item, class: "ItemBox" do
             = image_tag Image.where(item_id: item)[0].image.url
             .ItemBox__name

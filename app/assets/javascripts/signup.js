@@ -2,7 +2,6 @@
 $(document).on('turbolinks:load', function () {
   // ユーザーの誕生日の閏年を動的に変化させる
   // 誕生日の配列を宣言
-  console.log("練習");
   var birth_year = [];
   var birth_month = [];
   var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];

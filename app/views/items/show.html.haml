@@ -2,10 +2,15 @@
   .item-show__box
     .item-show__box__title
       %h2 
-        Levi's リーバイス Tシャツ　半袖
+        = @item.name
     .item-show__box__main
-      .item-show__box__main-img
-        = image_tag 'levis.jpg', class: 'item-img'
+      .itemImageArea
+        .itemImageArea-select
+          = image_tag @image.first.image.url, class: "imageSelect"
+        .itemImageArea-sub
+          - @image.ids.each do |i|
+            .subImage
+              = image_tag Image.find(i).image.url, id: "image", class: "subImage__content"
       .item-show__box__main-right
         %table
           %tr
@@ -13,58 +18,58 @@
               出品者
             %td
               = link_to "#" do
-                みなみ
+                = User.find(@item.seller_id).nickname
           %tr
             %th
               カテゴリー
             %td
               = link_to "#" do
-                %p メンズ
+                ＞
+                = @item_parentId.name
+                %br
               = link_to "#" do
-                %p ＞ トップス
+                ＞
+                = @item_childId.name
+                %br
               = link_to "#" do
-                %p ＞ Tシャツ/カットソー(半袖/袖なし)
+                ＞
+                = @item_grandchildId.name
           %tr
             %th
               ブランド
             %td
               = link_to "#" do
-                リーバイス
-          %tr
-            %th
-              商品のサイズ
-            %td
-              L
+                = @item.brand
           %tr
             %th
               商品の状態
             %td
-              目立った傷や汚れなし
+              = @condition.name
           %tr
             %th
               配送料の負担
             %td
-              送料込み(出品者負担)
-          %tr
-            %th
-              配送の方法
-            %td
-              ゆうゆうメルカリ便
+              = @shipping_cost.name
           %tr
             %th
               配送元地域	
             %td
-              神奈川県
+              = @prefecture.name
           %tr
             %th
               発送日の目安
             %td
-              1~2日で発送
+              = @shipping_time.name
     .item-show__box__price
       %p
-        ¥900 
-        %span
-          (税込)送料込み
+        ¥
+        = @price 
+        - if @shipping_cost.id == 1
+          %span
+            (税込)送料込み
+        - else
+          %span
+            (税込)
     .item-show__box__button
       - if user_signed_in? && current_user.id == @item.seller_id
         = link_to "商品編集",edit_item_path(@item.id), class: "button"
@@ -74,10 +79,7 @@
           .letter
             購入画面に進む
     .item-show__box__description
-      %p Levi'sのTシャツです。
-      %p  数回着用しました。
-      %p  サイズはMです。
-      %p  簡易梱包での発送となります。
+      = @item.description
 
 
 -# ＜追加実装のコメント部分＞
