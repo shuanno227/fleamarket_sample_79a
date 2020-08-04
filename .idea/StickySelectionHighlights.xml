@@ -28,7 +28,22 @@
             <PaintGroupHighlightMap />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/assets/javascripts/category.js">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/assets/javascripts/image.js">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/assets/javascripts/payjp.js">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/assets/javascripts/signup.js">
           <value>
             <PaintGroupHighlightMap />
           </value>
@@ -139,6 +154,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/views/credit_cards/new.html.haml">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/items/index.html.haml">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/items/new.html.haml">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/views/items/show.html.haml">
           <value>
             <PaintGroupHighlightMap />
           </value>
