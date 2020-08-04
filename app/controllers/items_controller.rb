@@ -91,13 +91,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
-  private
-
-  def item_params
-    params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
-  end
-
   def select_category_index
     # カテゴリ名を取得するために@categoryにレコードをとってくる
     @category = Category.find_by(id: params[:id])
@@ -141,5 +134,14 @@ class ItemsController < ApplicationController
       end
     end
   end
+
+
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
+  end
+
 end
 
