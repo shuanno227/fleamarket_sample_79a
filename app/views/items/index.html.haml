@@ -88,11 +88,11 @@
           %h3.MainApp__Conteiner__PruductBox__Head__Link__Title  
             新着商品
       .MainApp__Conteiner__PruductBox__Lists
-        - @cat_no1.each do |item|
+        - @items.first(4).each do |item|
           .MainApp__Conteiner__PruductBox__Lists__List
             =link_to item_path(item.id), class: "MainApp__Conteiner__PruductBox__Lists__List__A" do
               .MainApp__Conteiner__PruductBox__Lists__List__A__Img
-                = image_tag "#{item.images[0].image.url}"
+                = image_tag item.images[0].image.url
               .MainApp__Conteiner__PruductBox__Lists__List__A__Body
                 %h3.MainApp__Conteiner__PruductBox__Lists__List__A__Body__Name 
                   = item.name
@@ -115,7 +115,7 @@
           %h3.MainApp__Conteiner__PruductBox__Head__Link__Title  
             メンズカレー
       .MainApp__Conteiner__PruductBox__Lists
-        - @cat_no2.each do |item|
+        - @cat_no2.first(4).each do |item|
           .MainApp__Conteiner__PruductBox__Lists__List
             =link_to item_path(item.id), class: "MainApp__Conteiner__PruductBox__Lists__List__A" do
               .MainApp__Conteiner__PruductBox__Lists__List__A__Img

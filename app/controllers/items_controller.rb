@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :index_category_set, only: :index
 
   def index
+    @items = Item.includes([:images]).order(created_at: :desc)
   end
 
   def new
