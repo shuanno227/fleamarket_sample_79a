@@ -25,8 +25,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e886702a-0a49-4d38-92ab-a434b60cb9bd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StickySelectionHighlights.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/_complete.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_complete.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/_edit.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_edit.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/_exhibition.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_exhibition.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/_items.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_items.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/_reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_reset.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/_signin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_signin.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/_signup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_signup.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/_user.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/_user.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/items_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/items_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/address.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/address.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/category.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/category.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/condition.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/condition.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/item.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/item.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/prefecture.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/prefecture.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/shipping_cost.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/shipping_cost.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/shipping_time.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/shipping_time.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +291,7 @@
       <workItem from="1596008303441" duration="17762000" />
       <workItem from="1596129745636" duration="17022000" />
       <workItem from="1596191399104" duration="46914000" />
-      <workItem from="1596478344938" duration="1522000" />
+      <workItem from="1596478344938" duration="3132000" />
     </task>
     <servers />
   </component>

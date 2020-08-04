@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
       @item.images.new
     else
       redirect_to root_path
-    end 
+    end
   end
 
   def create
@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @image = Image.where(item_id: @item)
     gon.imageLength = @image.length
-    
+
   end
 
   def update
@@ -37,15 +37,15 @@ class ItemsController < ApplicationController
       render :edit
     else
       exit_ids = []
-      item_params[:images_attributes].each do |a,b|
-        exit_ids << item_params[:images_attributes].dig(:"#{a}",:id).to_i
+      item_params[:images_attributes].each do |a, b|
+        exit_ids << item_params[:images_attributes].dig(:"#{a}", :id).to_i
       end
-      ids = Image.where(item_id: params[:id]).map{|image| image.id }
+      ids = Image.where(item_id: params[:id]).map { |image| image.id }
       delete__db = ids - exit_ids
-      Image.where(id:delete__db).destroy_all
+      Image.where(id: delete__db).destroy_all
       @item.touch
       if @item.update(item_params)
-        redirect_to  update_done_items_path
+        redirect_to update_done_items_path
       else
         flash.now[:alert] = '更新できませんでした'
         render :edit
@@ -58,21 +58,20 @@ class ItemsController < ApplicationController
 # @image
 
 
-
   def show
     @item = Item.find(params[:id])
     @image = Image.where(item_id: @item)
     @item_grandchildId = Category.find(@item.category_id)
     @item_childId = @item_grandchildId.parent
-    @item_parentId =  Category.find(@item_childId.ancestry)
+    @item_parentId = Category.find(@item_childId.ancestry)
     @condition = Condition.find(@item.condition_id)
     @shipping_cost = ShippingCost.find(@item.shipping_cost_id)
     @shipping_time = ShippingTime.find(@item.shipping_time_id)
-    @prefecture =  Prefecture.find(@item.prefecture_id)
+    @prefecture = Prefecture.find(@item.prefecture_id)
     @price = @item.price
     gon.imageId = @image.ids
   end
-  
+
   def search_child
     respond_to do |format|
       format.html
@@ -84,7 +83,7 @@ class ItemsController < ApplicationController
   end
 
   def search_grandchild
-    
+
     respond_to do |format|
       format.html
       format.json do
@@ -93,6 +92,51 @@ class ItemsController < ApplicationController
       end
     end
   end
+
+  def select_category_index
+    # カテゴリ名を取得するために@categoryにレコードをとってくる
+    @category = Category.find_by(id: params[:id])
+
+    # 親カテゴリーを選択していた場合の処理
+    if @category.ancestry == nil
+      # Categoryモデル内の親カテゴリーに紐づく孫カテゴリーのidを取得
+      category = Category.find_by(id: params[:id]).indirect_ids
+      # 孫カテゴリーに該当するitemsテーブルのレコードを入れるようの配列を用意
+      @items = []
+      # find_itemメソッドで処理
+      find_item(category)
+
+    # 孫カテゴリーを選択していた場合の処理
+    elsif @category.ancestry.include?("/")
+      # Categoryモデル内の親カテゴリーに紐づく孫カテゴリーのidを取得
+      @items = Item.where(category_id: params[:id])
+
+    # 子カテゴリーを選択していた場合の処理
+    else
+      category = Category.find_by(id: params[:id]).child_ids
+      # 孫カテゴリーに該当するitemsテーブルのレコードを入れるようの配列を用意
+      @items = []
+      # find_itemメソッドで処理
+      find_item(category)
+    end
+  end
+
+  def find_item(category)
+    category.each do |id|
+      item_array = Item.includes(:images).where(category_id: id)
+      # find_by()メソッドで該当のレコードがなかった場合、itemオブジェクトに空の配列を入れないようにするための処理
+      if item_array.present?
+        item_array.each do |item|
+          if item.present?
+          else
+            # find_by()メソッドで該当のレコードが見つかった場合、@item配列オブジェクトにそのレコードを追加する
+            @items.push(item)
+          end
+        end
+      end
+    end
+  end
+
 
 
   private

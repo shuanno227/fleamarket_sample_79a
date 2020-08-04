@@ -75,11 +75,11 @@ gem 'fog-aws'
 gem 'rails-i18n'
 gem 'active_hash'
 gem 'ancestry'
+gem 'gon'
 
 # PAY.JPのgem
 gem 'payjp'
 
 # 環境変数を簡単に定義できるENVファイルを対応させるgem
-
 gem 'dotenv-rails'
 

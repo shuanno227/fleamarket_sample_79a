@@ -1,7 +1,7 @@
 %section.item-show
   .item-show__box
     .item-show__box__title
-      %h2 
+      %h2
         = @item.name
     .item-show__box__main
       .itemImageArea
@@ -73,7 +73,7 @@
     .item-show__box__button
       - if user_signed_in? && current_user.id == @item.seller_id
         = link_to "商品編集",edit_item_path(@item.id), class: "button"
-          
+
       - else
         %button{type: "submit", class: "button"}
           .letter

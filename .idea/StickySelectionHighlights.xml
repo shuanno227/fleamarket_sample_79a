@@ -33,7 +33,22 @@
             <PaintGroupHighlightMap />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/assets/stylesheets/_complete.scss">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/assets/stylesheets/_credit_card.scss">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/assets/stylesheets/_edit.scss">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/assets/stylesheets/_exhibition.scss">
           <value>
             <PaintGroupHighlightMap />
           </value>
@@ -48,7 +63,32 @@
             <PaintGroupHighlightMap />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/controllers/application_controller.rb">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/controllers/credit_cards_controller.rb">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/controllers/items_controller.rb">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/models/address.rb">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/models/category.rb">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/models/condition.rb">
           <value>
             <PaintGroupHighlightMap />
           </value>
@@ -59,6 +99,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/models/item.rb">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/models/prefecture.rb">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/models/shipping_cost.rb">
+          <value>
+            <PaintGroupHighlightMap />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/models/shipping_time.rb">
           <value>
             <PaintGroupHighlightMap />
           </value>
