@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       get 'search_child', defaults: { format: 'json' }
       get 'search_grandchild', defaults: { format: 'json' }
     end
+    member do
+      get 'select_category_index'
+    end
   end
 
   resources :users

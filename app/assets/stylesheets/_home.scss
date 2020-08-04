@@ -43,6 +43,9 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    &-left {
+      display: flex;
+    }
 
     &-left a {
       text-decoration: none;
@@ -94,3 +97,76 @@
   }
 }
 
+.categories {
+  padding-bottom: 10px;
+  &__search {
+    padding-bottom: 20px;
+  }
+  &__child,
+  &__parent, 
+  &__grandchild {
+    display: none;
+    z-index: 99;  
+  } 
+  &__icon,
+  .brands__icon {
+    color: #3CC9CE;
+  }
+  &__list { // カテゴリーの大枠の要素の共通項
+    position: absolute;
+    height: 560px;
+    background-color: white;
+    border-right: 1px solid whitesmoke;
+    padding: 0 20px 0 0;
+  }
+  &__child--name { // 子要素はカテゴリー名の共通項
+    width: 100%;
+    color: black;
+    display: inline-block;
+    padding: 3px 15px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    &:hover {
+      background-color: rgba(211, 211, 211, .7);
+      width: 100%;
+      padding: 0 20px;  
+    }  
+  }
+  &__parent--name:hover {
+    background-color: rgba(135, 206, 235, .8);
+  }
+  &:hover{
+    .categories__parent{
+      top: 122px;
+      display: block;
+      &--name{
+        width: 100%;
+        color: black;
+        display: inline-block;
+        padding: 10px 40px;
+        font-size: 13px;
+        letter-spacing: 2px;
+      }
+      li {
+        &:hover{
+          .categories__child{
+            width: 100%;
+            display: block;
+            top: 0;
+            left: 240px;
+            li {
+              &:hover{
+                .categories__grandchild{
+                  width: 100%;
+                  display: block;
+                  top: 0;
+                  left: 220px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

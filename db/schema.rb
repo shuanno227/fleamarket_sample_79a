@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_07_31_072943) do
-
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "destination_name", null: false
@@ -43,7 +41,6 @@ ActiveRecord::Schema.define(version: 2020_07_31_072943) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
-
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "payjp_id", null: false
     t.bigint "user_id", null: false
@@ -51,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_072943) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_credit_cards_on_user_id"
   end
-  
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
     t.bigint "item_id", null: false
@@ -101,11 +98,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_072943) do
   end
 
   add_foreign_key "addresses", "users"
-
   add_foreign_key "credit_cards", "users"
-  add_foreign_key "items", "brands"
-
   add_foreign_key "images", "items"
-
   add_foreign_key "items", "categories"
 end
