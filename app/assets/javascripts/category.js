@@ -4,7 +4,9 @@ $(function () {
     var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
+
   "ハッシュ名[category_id]"
+
   // 子カテゴリーの表示作成
   function appendChildrenBox(insertHTML) {
     var childSelectHtml = '';
@@ -60,7 +62,8 @@ $(function () {
         .fail(function () {
           alert('カテゴリーを入力して下さい');
         })
-    } else {
+    }
+    else {
       $('#categoryBox--children').remove();
       $('#categoryBox--grandchildren').remove();
     }
@@ -90,7 +93,8 @@ $(function () {
         .fail(function () {
           alert('カテゴリーを入力して下さい');
         })
-    } else {
+    }
+    else {
       $('#categoryBox--children').remove();
       $('#categoryBox--grandchildren').remove();
     }

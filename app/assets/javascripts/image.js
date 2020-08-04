@@ -19,7 +19,7 @@ $(function () {
       var num = $('.item-image').length + 1 + i
       fileReader.readAsDataURL(file);
       //画像が10枚になったら超えたらドロップボックスを削除する
-      if (num == 10) {
+      if (num === 10) {
         $('#image-box__container').css('display', 'none')
       }
       //読み込みが完了すると、srcにfileのURLを格納
@@ -49,15 +49,16 @@ $(function () {
     //削除を押されたプレビューimageのfile名を取得
     var target_name = $(target_image).data('image')
     //プレビューがひとつだけの場合、file_fieldをクリア
-    if (file_field.files.length == 1) {
+    if (file_field.files.length === 1) {
       //inputタグに入ったファイルを削除
       $('input[type=file]').val(null)
       dataBox.clearData();
-    } else {
+    }
+    else {
       //プレビューが複数の場合
       $.each(file_field.files, function (i, input) {
         //削除を押された要素と一致した時、index番号に基づいてdataBoxに格納された要素を削除する
-        if (input.name == target_name) {
+        if (input.name === target_name) {
           dataBox.items.remove(i)
         }
       })

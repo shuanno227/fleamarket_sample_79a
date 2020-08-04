@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
       @item.images.new
     else
       redirect_to root_path
-    end 
+    end
   end
 
   def create
@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @image = Image.where(item_id: @item)
     gon.imageLength = @image.length
-    
+
   end
 
   def update
@@ -34,15 +34,15 @@ class ItemsController < ApplicationController
       render :edit
     else
       exit_ids = []
-      item_params[:images_attributes].each do |a,b|
-        exit_ids << item_params[:images_attributes].dig(:"#{a}",:id).to_i
+      item_params[:images_attributes].each do |a, b|
+        exit_ids << item_params[:images_attributes].dig(:"#{a}", :id).to_i
       end
-      ids = Image.where(item_id: params[:id]).map{|image| image.id }
+      ids = Image.where(item_id: params[:id]).map { |image| image.id }
       delete__db = ids - exit_ids
-      Image.where(id:delete__db).destroy_all
+      Image.where(id: delete__db).destroy_all
       @item.touch
       if @item.update(item_params)
-        redirect_to  update_done_items_path
+        redirect_to update_done_items_path
       else
         flash.now[:alert] = '更新できませんでした'
         render :edit
@@ -55,21 +55,20 @@ class ItemsController < ApplicationController
 # @image
 
 
-
   def show
     @item = Item.find(params[:id])
     @image = Image.where(item_id: @item)
     @item_grandchildId = Category.find(@item.category_id)
     @item_childId = @item_grandchildId.parent
-    @item_parentId =  Category.find(@item_childId.ancestry)
+    @item_parentId = Category.find(@item_childId.ancestry)
     @condition = Condition.find(@item.condition_id)
     @shipping_cost = ShippingCost.find(@item.shipping_cost_id)
     @shipping_time = ShippingTime.find(@item.shipping_time_id)
-    @prefecture =  Prefecture.find(@item.prefecture_id)
+    @prefecture = Prefecture.find(@item.prefecture_id)
     @price = @item.price
     gon.imageId = @image.ids
   end
-  
+
   def search_child
     respond_to do |format|
       format.html
@@ -81,7 +80,7 @@ class ItemsController < ApplicationController
   end
 
   def search_grandchild
-    
+
     respond_to do |format|
       format.html
       format.json do

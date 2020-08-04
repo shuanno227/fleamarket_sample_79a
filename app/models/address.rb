@@ -10,7 +10,7 @@ class Address < ApplicationRecord
     admin.validates :city
     admin.validates :address
   end
-  validates :telephone_number, format: {with: /\A\d{10,11}\z/, allow_blank: true , message: "フォーマットが不適切です"}
+  validates :telephone_number, format: {with: /\A\d{10,11}\z/, allow_blank: true, message: "フォーマットが不適切です"}
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
