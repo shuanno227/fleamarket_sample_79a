@@ -1,8 +1,9 @@
-.SignIn{
+.SignIn {
   // ヘッダーの変更に伴い以下は要変更
   height: 100%;
   padding-top: 100px;
   background-color: #F2F2F2;
+
   &__content {
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     font-size: 14px;
@@ -11,6 +12,7 @@
     margin: 0 auto;
     background-color: #ffffff;
     padding: 24px 0;
+
     .registration {
       margin: 0 auto;
       font-size: 22px;
@@ -18,21 +20,27 @@
       padding: 32px;
       text-align: center;
     }
+
     .LoginForm {
       width: 340px;
       margin: 0 auto;
       padding: 0 0 36px 0;
+
       .field {
         margin: 0 0 20px 0;
+
         .field_with_errors {
           display: contents;
         }
+
         .FormLabel {
           display: flex;
+
           .title {
             font-size: 14px;
             font-weight: 600;
           }
+
           #user_remember_me {
             border: 1px solid black;
             content: "";
@@ -42,10 +50,12 @@
             margin: 0 10px 0 0;
           }
         }
+
         .input {
           width: 100%;
           margin: 8px 0 0;
         }
+
         .input-default {
           text-decoration: none;
           height: 48px;
@@ -57,6 +67,7 @@
           line-height: 1.5;
         }
       }
+
       .actions {
         .nextBtn {
           width: 100%;
@@ -67,6 +78,7 @@
           border-radius: 4px;
           border: none;
         }
+
         .Login {
           display: inline-block;
           text-decoration: none;

@@ -3,7 +3,7 @@
     %h2 マイページ
     .user__my-page__box__name
       ユーザー名:
-      %per.user__name 
+      %per.user__name
         = @user.nickname
     .user__my-page__box__button
       .user__my-page__box__button-credit
@@ -12,7 +12,7 @@
       .ItemBoxes
         .ItemBoxes__title 出品した商品
         - @items.each do |item|
-        
+
           = link_to item, class: "ItemBox" do
             = image_tag Image.where(item_id: item)[0].image.url
             .ItemBox__name

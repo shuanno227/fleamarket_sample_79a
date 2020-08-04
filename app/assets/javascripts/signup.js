@@ -1,4 +1,3 @@
-
 $(document).on('turbolinks:load', function () {
   // ユーザーの誕生日の閏年を動的に変化させる
   // 誕生日の配列を宣言
@@ -13,11 +12,11 @@ $(document).on('turbolinks:load', function () {
 
   // 誕生年月の配列を自動生成
   for (var i = this_year; i >= oldest_year; i--) {
-    var year = { var: i, txt: String(i) };
+    var year = {var: i, txt: String(i)};
     birth_year.push(year);
   }
   for (var i = 1; i <= 12; i++) {
-    var month = { var: i, txt: String(i) };
+    var month = {var: i, txt: String(i)};
     birth_month.push(month);
   }
   // hamlの年と月のセレクトボックスに配列内容を反映させる
@@ -48,11 +47,11 @@ $(document).on('turbolinks:load', function () {
     var year = $('#select_birth_year').val();
     var month = $("#select_birth_month").val();
     // yearとmonth共に数字が入力されている、すなわち共に'--'でないときに実行
-    if (year != '--' && month != '--') {
+    if (year !== '--' && month !== '--') {
       // monthに２月が選択されている時実行
-      if (month == 2) {
+      if (month === 2) {
         // yearが閏年の時、2月の日付が格納されているmonths[1]の値を29にする
-        if (year % 4 == 0 && year % 100 == 0 && year % 400 == 0) {
+        if (year % 4 === 0 && year % 100 === 0 && year % 400 === 0) {
           months[1] = 29;
         }
       }
@@ -60,7 +59,7 @@ $(document).on('turbolinks:load', function () {
       // セレクトボックスに反映させる
       var birth_day = []
       for (var i = 1; i <= months[month - 1]; i++) {
-        var day = { var: i, txt: String(i) };
+        var day = {var: i, txt: String(i)};
         birth_day.push(day);
       }
       for (var i = 0; i < birth_day.length; i++) {
@@ -68,8 +67,10 @@ $(document).on('turbolinks:load', function () {
           value: birth_day[i].var,
           text: birth_day[i].txt
         }).appendTo('#select_birth_day');
-      };
-    };
+      }
+      ;
+    }
+    ;
   });
 
 });
