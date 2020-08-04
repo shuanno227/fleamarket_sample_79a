@@ -1,0 +1,41 @@
+= form_with url:credit_cards_path, method: :post, html: { name: "inputForm" }, class:"form" do |f|
+  .form__upper
+    .form__upper__group
+      = f.label :カード番号
+      %span.form-require 必須
+      = f.text_field :card_number, name: "card_number", id:"card_number", type: "text", placeholder: '半角数字のみ', class: 'input-default', maxlength: "16"
+      -# 事前にassets/imagesにcardsファイルを作成、中に各カード会社の画像を入れておき、呼び出す。
+      %ol
+        %li
+          %object{type: "image/gif", data: "#{image_path 'creditcards/visa.gif'}", width:"35", height:"20"}
+        %li
+          %object{type: "image/png", data: "#{image_path 'creditcards/master.png'}", width:"35", height:"20"}
+        %li
+          %object{type: "image/gif", data: "#{image_path 'creditcards/saison.gif'}", width:"35", height:"20"}
+        %li
+          %object{type: "image/gif", data: "#{image_path 'creditcards/jcb.gif'}", width:"35", height:"20"}
+        %li
+          %object{type: "image/gif", data: "#{image_path 'creditcards/amex.gif'}", width:"35", height:"20", class:"american_express"}
+        %li
+          %object{type: "image/gif", data: "#{image_path 'creditcards/diners.gif'}", width:"35", height:"20"}
+        %li
+          %object{type: "image/gif", data: "#{image_path 'creditcards/discover.gif'}", width:"35", height:"20"}
+    .form__upper__group.exp
+      .name
+        = f.label :有効期限
+        %span.form-require 必須
+      = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{}, class: 'input-default harf', name: "exp_month", id:"exp_month"
+      %span 月
+      = f.select :exp_year, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]], {}, class: 'input-default harf', name: "exp_year", id:"exp_year"
+      %span 年
+    .form__upper__group
+      = f.label :セキュリティーコード
+      %span.form-require 必須
+      = f.text_field :cvc, name: "cvc", id:"cvc", class:"cvc", type: "text", placeholder: 'カード背面4桁もしくは3桁の番号', class: 'input-default', maxlength: "16"
+    .form__upper__group
+      %p.about
+        -# = fa_icon 'question-circle'
+        %span
+        = link_to 'カード裏面の番号とは？', root_path, class:'about__registered'
+    .form__upper__group
+      = f.submit '追加する', class: 'btn-default', id: "charge-form"
