@@ -23,15 +23,15 @@
             %th
               カテゴリー
             %td
-              = link_to "#" do
+              = link_to select_category_index_item_path do
                 ＞
                 = @item_parentId.name
                 %br
-              = link_to "#" do
+              = link_to "/items/#{@item_childId.id}/select_category_index" do
                 ＞
                 = @item_childId.name
                 %br
-              = link_to "#" do
+              = link_to "/items/#{@item_grandchildId.id}/select_category_index" do
                 ＞
                 = @item_grandchildId.name
           %tr
