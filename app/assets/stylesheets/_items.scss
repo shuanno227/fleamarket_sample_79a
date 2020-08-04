@@ -125,6 +125,22 @@
         font-weight: bold;
         font-size: 24px;
       }
+
+      .deleteview {
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        width: 100%;
+        background-color: gray;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 24px;
+        margin-top: 20px;
+      }
     }
 
     &__description {
@@ -150,7 +166,7 @@
         padding: 10px;
         line-height: 1.5;
       }
-
+      
       .button {
         text-align: center;
         height: 40px;
@@ -164,6 +180,7 @@
       }
     }
   }
-
 }
+
+
 
