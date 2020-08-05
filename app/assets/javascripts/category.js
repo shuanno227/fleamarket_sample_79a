@@ -38,7 +38,7 @@ $(function () {
   // 子要素のアクション
   $("#parent_form").on("change", function () {
     var parentValue = document.getElementById("parent_form").value;
-    if (parentValue != "---") {
+    if (parentValue !== "---") {
       $('#categoryBox--children').remove(); // 選択し直したときに、前回の選択イベント発火で表示したボックスを消去
       $('#categoryBox--grandchildren').remove(); // 選択し直したときに、前回の選択イベント発火で表示したボックスを消去
       $.ajax({
@@ -72,7 +72,7 @@ $(function () {
   // 孫要素のアクション
   $(".categoryField-details").on("change", "#child_form", function () {
     var childValue = $('#child_form option:selected').data('category');
-    if (childValue != "---") {
+    if (childValue !== "---") {
       $('#categoryBox--grandchildren').remove(); // 選択し直したときに、前回の選択イベント発火で表示したボックスを消去
       $.ajax({
         url: '/items/search_grandchild',
