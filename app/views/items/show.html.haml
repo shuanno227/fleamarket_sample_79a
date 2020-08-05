@@ -73,7 +73,7 @@
     .item-show__box__button
       - if user_signed_in? && current_user.id == @item.seller_id
         = link_to "商品編集",edit_item_path(@item.id), class: "button"
-        = link_to "削除", "#", class: "deleteview"
+        = link_to "削除", item_path(@item.id), method: :delete, class: "deleteview"
 
       - else
         %button{type: "submit", class: "button"}

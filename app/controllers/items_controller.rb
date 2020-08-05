@@ -72,6 +72,17 @@ class ItemsController < ApplicationController
     gon.imageId = @image.ids
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    if @item.destroy
+      flash[:notice] = '商品を削除しました。'
+      redirect_to user_path(current_user)
+    else
+      flash[:alert] = '削除に失敗しました。'
+      redirect_to user_path(current_user)
+    end
+  end
+
   def search_child
     respond_to do |format|
       format.html
