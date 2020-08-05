@@ -102,6 +102,7 @@ class ItemsController < ApplicationController
       @items = []
       # find_itemメソッドで処理
       find_item(category)
+      @items = Item.where(category_id: params[:id])
 
     # 孫カテゴリーを選択していた場合の処理
     elsif @category.ancestry.include?("/")
@@ -116,6 +117,12 @@ class ItemsController < ApplicationController
       # find_itemメソッドで処理
       find_item(category)
     end
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
   end
 
   def find_item(category)
@@ -133,14 +140,5 @@ class ItemsController < ApplicationController
       end
     end
   end
-
-
-
-  private
-
-  def item_params
-    params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
-  end
-
 end
 

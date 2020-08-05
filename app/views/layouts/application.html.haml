@@ -45,8 +45,7 @@
                                   = link_to "/items/#{grandchild.id}/select_category_index", class: " categories__child--name" do
                                     = grandchild.name 
           .bland                          
-            = link_to "ブランド", "#" 
-
+            = link_to "ブランド", "#"        
         - if user_signed_in?
           .header__bottom-right
             = link_to "マイページ", user_path(current_user)
