@@ -132,6 +132,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  private
+
+  def item_params
+    params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
+  end
+
   def find_item(category)
     category.each do |id|
       item_array = Item.includes(:images).where(category_id: id)
@@ -139,7 +145,6 @@ class ItemsController < ApplicationController
       if item_array.present?
         item_array.each do |item|
           if item.present?
-          else
             # find_by()メソッドで該当のレコードが見つかった場合、@item配列オブジェクトにそのレコードを追加する
             @items.push(item)
           end
@@ -147,8 +152,6 @@ class ItemsController < ApplicationController
       end
     end
   end
-
-
 
   private
 
@@ -168,6 +171,5 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
   end
-
 end
 
