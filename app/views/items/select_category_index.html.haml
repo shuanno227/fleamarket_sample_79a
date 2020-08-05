@@ -8,6 +8,11 @@
       .SelectCategoryBody__ContentsList
         -@items.each do |item|
           .SelectCategoryBody__ContentsList__Content
+            .SelectCategoryBody__ContentsList__Content__sold
+              -if item.buyer_id.present? 
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner
+                    SOLD
             .SelectCategoryBody__ContentsList__Content__ImageArea
               - item.images.each_with_index do |image, idx|
                 - if idx == 0
