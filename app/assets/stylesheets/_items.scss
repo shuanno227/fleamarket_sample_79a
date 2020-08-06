@@ -125,6 +125,15 @@
         font-weight: bold;
         font-size: 24px;
       }
+        height: 60px;
+        width: 100%;
+        background-color: gray;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 24px;
+      }
+
 
       .deleteview {
         display: flex;
@@ -141,6 +150,11 @@
         font-size: 24px;
         margin-top: 20px;
       }
+      .letter {
+        text-decoration: none;
+        color: #fff;
+      }
+
     }
 
     &__description {
@@ -179,6 +193,159 @@
         font-size: 16px;
       }
     }
+  }
+}
+.confirm {
+  background-color: #f5f5f5c5;
+  padding: 50px 100px;
+
+  &__box {
+    background-color: #fff;
+    width: 600px;
+    margin: 50px auto;
+    padding: 30px 100px;
+
+    h2 {
+      color: #333333;
+      font-size: 24px;
+      margin: 30px;
+      text-align: center;
+      font-weight: bold;
+    }
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #F5F5F5;
+      padding: 20px 0;
+      &-img {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+      }
+      &__info {
+        width: 50%;
+        &-name {
+          text-align: left;
+        }
+        &-price {
+          text-align: right;
+          .tax {
+            font-size: 16px;
+          }
+          .price {
+            font-weight: bold;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    &__confirmPrice {
+      display: flex;
+      justify-content: space-between;
+      padding: 30px 0;
+      border-bottom: 1px solid #F5F5F5;
+      &-title {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      &-price {
+        font-weight: bold;
+        font-size: 24px;
+      }
+    }
+    &__confirmPey {
+      padding: 30px 0;
+      border-bottom: 1px solid #F5F5F5;
+      &-title {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+      .container {
+        padding: 24px 0;
+        .credit_card-info {
+          position: relative;
+          max-width: 320px;
+          margin: 0 auto;
+          &__delete {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 4px 6px;
+            background-color: #FFFFFF;
+            border-radius: 3px;
+            border: 1px solid #ea352d;
+            color: #ea352d;
+          }
+        }
+      }
+      .new-card {
+        padding: 10px 0;
+        &-btn {
+          text-decoration: none;
+          margin-bottom: 8px !important;
+          color: #0099e8;
+          display: block;
+          font-size: 16px;
+        }
+        .fa-credit-card {
+          margin-right: 16px;
+        }
+      }
+    }
+    &__confirmAddress {
+      padding: 30px 0;
+      border-bottom: 1px solid #F5F5F5;
+      .title {
+        font-size: 18px;
+      }
+      &-inner {
+        padding: 15px 0;
+        font-size: 14px;
+      }
+    }
+    &__confirmBottom {
+      padding: 30px;
+      border-bottom: 1px solid #F5F5F5;
+      p {
+        color: #909090;
+        font-size: 14px;
+      }
+    }
+    &__confirmButton {
+      padding: 30px 0;
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        width: 100%;
+        background-color: #3CC9CE;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 24px;
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+
+      }
+      .button_not {
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        width: 100%;
+        background-color: gray;
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+    }
+
   }
 }
 

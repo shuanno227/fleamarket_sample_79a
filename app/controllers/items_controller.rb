@@ -133,6 +133,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  def confirm
+    @item = Item.find(params[:id])
+    @image = @item.images
+    @user = current_user
+    @adresses = Address.find(@user.id)
+  end
   private
 
   def item_params
