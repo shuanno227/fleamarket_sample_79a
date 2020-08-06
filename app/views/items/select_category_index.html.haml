@@ -1,0 +1,25 @@
+%section.SelectCategoryBody
+  .SelectCategoryBody__Title
+    -if @category == 0
+      %p.SelectCategoryBody__Title--Head すべての商品一覧
+    -else
+      %p.SelectCategoryBody__Title--Head
+        = "#{@category.name}の商品一覧"
+      .SelectCategoryBody__ContentsList
+        -@items.each do |item|
+          .SelectCategoryBody__ContentsList__Content
+            .SelectCategoryBody__ContentsList__Content__sold
+              -if item.buyer_id.present? 
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner
+                    SOLD
+            .SelectCategoryBody__ContentsList__Content__ImageArea
+              - item.images.each_with_index do |image, idx|
+                - if idx == 0
+                  = link_to item_path(item.id) do
+                    = image_tag image.image.url, class:"SelectCategoryBody__ContentsList__Content__ImageArea--Img"
+                - else
+              .SelectCategoryBody__ContentsList__Content__ImageArea--Price
+                = "¥ #{item.price}"
+            .SelectCategoryBody__ContentsList__Content__TextArea
+              = item.name

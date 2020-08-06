@@ -24,10 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e886702a-0a49-4d38-92ab-a434b60cb9bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-    </list>
+    <list default="true" id="e886702a-0a49-4d38-92ab-a434b60cb9bd" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,7 +100,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Ruby" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -270,7 +267,8 @@
       <workItem from="1596008303441" duration="17762000" />
       <workItem from="1596129745636" duration="17022000" />
       <workItem from="1596191399104" duration="46914000" />
-      <workItem from="1596478344938" duration="1522000" />
+      <workItem from="1596478344938" duration="5303000" />
+      <workItem from="1596530051778" duration="846000" />
     </task>
     <servers />
   </component>
@@ -363,10 +361,10 @@
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
     <state width="239" height="200" key="RunAnythingAction_Filter_Popup/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596502815987" />
-    <state x="-1920" y="-125" width="960" height="1057" key="SettingsEditor" timestamp="1596193677587">
+    <state x="-1920" y="-125" width="1330" height="1057" key="SettingsEditor" timestamp="1596530975232">
       <screen x="-1920" y="-125" width="1920" height="1057" />
     </state>
-    <state x="-1920" y="-125" width="960" height="1057" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596193677587" />
+    <state x="-1920" y="-125" width="1330" height="1057" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@-1920.-125.1920.1057" timestamp="1596530975232" />
     <state x="148" y="49" width="1070" height="773" key="SettingsEditor/0.23.1440.877/-1920.-125.1920.1057@0.23.1440.877" timestamp="1595795499309" />
     <state x="-1283" y="12" width="645" height="783" key="find.popup" timestamp="1596398247545">
       <screen x="-1920" y="-125" width="1920" height="1057" />

@@ -80,6 +80,5 @@ gem 'gon'
 gem 'payjp'
 
 # 環境変数を簡単に定義できるENVファイルを対応させるgem
-
 gem 'dotenv-rails'
 

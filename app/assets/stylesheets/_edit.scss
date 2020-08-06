@@ -1,8 +1,9 @@
-.Edit{
+.Edit {
   // ヘッダーの変更に伴い以下は要変更
   height: 100%;
   padding-top: 100px;
   background-color: #F2F2F2;
+
   &__content {
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     font-size: 14px;
@@ -11,6 +12,7 @@
     margin: 0 auto;
     background-color: #ffffff;
     padding: 24px 0;
+
     .registration {
       margin: 0 auto;
       font-size: 22px;
@@ -18,24 +20,29 @@
       padding: 32px;
       text-align: center;
     }
+
     .exhibitionForm {
       width: 90%;
       margin: 0 auto;
       padding: 0 0 36px 0;
+
       .field-title {
         color: #888888;
         font-size: 14px;
         font-weight: 600;
         margin: 0 0 24px 0;
       }
+
       .FormLabel {
         display: flex;
         width: 48%;
         margin: 0 0 12px 0;
+
         .title {
           font-size: 14px;
           font-weight: 600;
         }
+
         .MustMessage,
         .NotMustMessage {
           font-size: 12px;
@@ -45,6 +52,7 @@
           padding: 2px 4px;
           border-radius: 2px;
         }
+
         .NotMustMessage {
           background-color: gray;
         }
@@ -53,13 +61,16 @@
       .js-file-edit {
         display: none;
       }
+
       p {
         margin: 0 0 12px 0;
       }
+
       .input {
         width: 100%;
         margin: 8px 0 0;
       }
+
       .input-default {
         text-decoration: none;
         height: 48px;
@@ -70,24 +81,30 @@
         font-size: 16px;
         line-height: 1.5;
       }
+
       .input-text {
         height: 150px;
       }
+
       .field {
         margin: 0 0 20px 0;
+
         .field_with_errors {
           display: contents;
         }
-        
+
       }
+
       .field-price {
         display: flex;
         position: relative;
         height: 48px;
         align-items: center;
+
         .dollar {
           font-size: 14px;
         }
+
         .input-price {
           width: 50%;
           position: absolute;
@@ -95,18 +112,21 @@
           bottom: 0;
         }
       }
-      .listing-form-box{
-        .listing-product-detail__category{
-          .FormLabel{
+
+      .listing-form-box {
+        .listing-product-detail__category {
+          .FormLabel {
             display: flex;
           }
         }
       }
+
       .actions {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         margin-top: 60px;
+
         .nextBtn {
           width: 60%;
           padding: 12px 0;
@@ -117,12 +137,14 @@
           border: none;
         }
       }
+
       .item-image {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         width: 20%;
       }
+
       #image-box-1 {
         display: flex;
         flex-wrap: wrap;
@@ -169,7 +191,6 @@
           
         }
       }
-      
     }
   }
 }

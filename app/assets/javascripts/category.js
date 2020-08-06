@@ -4,7 +4,9 @@ $(function () {
     var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
+
   "ハッシュ名[category_id]"
+
   // 子カテゴリーの表示作成
   function appendChildrenBox(insertHTML) {
     var childSelectHtml = '';
@@ -37,7 +39,7 @@ $(function () {
   $("#parent_form").on("change", function () {
     console.log("確認")
     var parentValue = document.getElementById("parent_form").value;
-    if (parentValue != "---") {
+    if (parentValue !== "---") {
       $('#categoryBox--children').remove(); // 選択し直したときに、前回の選択イベント発火で表示したボックスを消去
       $('#categoryBox--grandchildren').remove(); // 選択し直したときに、前回の選択イベント発火で表示したボックスを消去
       $.ajax({
@@ -61,7 +63,8 @@ $(function () {
         .fail(function () {
           alert('カテゴリーを入力して下さい');
         })
-    } else {
+    }
+    else {
       $('#categoryBox--children').remove();
       $('#categoryBox--grandchildren').remove();
     }
@@ -70,7 +73,7 @@ $(function () {
   // 孫要素のアクション
   $(".categoryField-details").on("change", "#child_form", function () {
     var childValue = $('#child_form option:selected').data('category');
-    if (childValue != "---") {
+    if (childValue !== "---") {
       $('#categoryBox--grandchildren').remove(); // 選択し直したときに、前回の選択イベント発火で表示したボックスを消去
       $.ajax({
         url: '/items/search_grandchild',
@@ -91,7 +94,8 @@ $(function () {
         .fail(function () {
           alert('カテゴリーを入力して下さい');
         })
-    } else {
+    }
+    else {
       $('#categoryBox--children').remove();
       $('#categoryBox--grandchildren').remove();
     }

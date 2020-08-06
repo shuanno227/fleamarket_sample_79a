@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       get 'search_grandchild', defaults: { format: 'json' }
       get 'update_done'
     end
+    member do
+      get 'select_category_index'
+    end
   end
 
   resources :users

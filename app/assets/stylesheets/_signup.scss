@@ -1,8 +1,9 @@
-.SignUp{
+.SignUp {
   // ヘッダーの変更に伴い以下は要変更
   height: 100%;
   padding-top: 100px;
   background-color: #F2F2F2;
+
   &__content {
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     font-size: 14px;
@@ -11,6 +12,7 @@
     margin: 0 auto;
     background-color: #ffffff;
     padding: 24px 0;
+
     .registration {
       margin: 0 auto;
       font-size: 22px;
@@ -18,21 +20,27 @@
       padding: 32px;
       text-align: center;
     }
+
     .registrationForm {
       width: 340px;
       margin: 0 auto;
       padding: 0 0 36px 0;
+
       .field {
         margin: 0 0 20px 0;
+
         .field_with_errors {
           display: contents;
         }
+
         .FormLabel {
           display: flex;
+
           .title {
             font-size: 14px;
             font-weight: 600;
           }
+
           .MustMessage {
             font-size: 12px;
             color: #ffffff;
@@ -42,35 +50,43 @@
             border-radius: 2px;
           }
         }
+
         .attention {
           color: #888888;
           margin: 6px 0 0 0;
         }
+
         .confirmation {
           margin: 24px 0 24px 0;
-          &--title{
+
+          &--title {
             font-size: 16px;
             font-weight: bold;
             margin: 0 0 4px 0;
           }
         }
+
         .birth {
           font-weight: 100;
           color: #333333;
           margin: 8px 0 0;
         }
+
         .input {
           width: 100%;
           margin: 8px 0 0;
         }
+
         .input-name,
         .input-name-left {
           width: 48%;
           margin: 8px 0 0;
         }
+
         .input-name-left {
           margin: 0 8px 0 0;
         }
+
         .input-default {
           text-decoration: none;
           height: 48px;
@@ -81,6 +97,7 @@
           font-size: 16px;
           line-height: 1.5;
         }
+
         #address_prefecture_id {
           box-sizing: border-box;
           width: 100%;
@@ -91,6 +108,7 @@
           background: #fff;
         }
       }
+
       .actions {
         .nextBtn {
           width: 100%;
@@ -101,6 +119,7 @@
           border-radius: 4px;
           border: none;
         }
+
         .Login {
           display: inline-block;
           text-decoration: none;
