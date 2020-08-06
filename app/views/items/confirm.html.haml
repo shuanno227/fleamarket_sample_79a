@@ -42,13 +42,13 @@
       %p.title 配送先
       .confirm__box__confirmAddress-inner
         %p.confirm__box__confirmAddress-inner__postcode
-          ="〒#{@user.address.post_code}"
+          ="〒#{current_user.address.post_code}"
         %p.confirm__box__confirmAddress-inner__address
           = @adresses.prefecture.name
-          = @user.address.city 
-          = @user.address.address
+          = current_user.address.city 
+          = current_user.address.address
         %p.confirm__box__confirmAddress-inner__buyer
-          = @user.address.destination_name
+          = current_user.address.destination_name
     .confirm__box__confirmBottom
       %p 
         郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。

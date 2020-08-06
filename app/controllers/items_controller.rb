@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :index_category_set, only: :index
+  before_action :set_item, only: [:edit, :update, :show, :destroy, :confirm]
+
 
   def index
     @items = Item.includes([:images]).order(created_at: :desc)
@@ -19,7 +21,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
     else
@@ -28,14 +29,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
     @image = Image.where(item_id: @item)
     gon.imageLength = @image.length
 
   end
 
   def update
-    @item = Item.find(params[:id])
     if item_params[:images_attributes].nil?
       flash.now[:alert] = '更新できませんでした 【画像を１枚以上入れてください】'
       render :edit
@@ -60,7 +59,6 @@ class ItemsController < ApplicationController
 
 
   def show
-    @item = Item.find(params[:id])
     @image = Image.where(item_id: @item)
     @item_grandchildId = Category.find(@item.category_id)
     @item_childId = @item_grandchildId.parent
@@ -74,7 +72,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     if @item.destroy
       flash[:notice] = '商品を削除しました。'
       redirect_to user_path(current_user)
@@ -134,10 +131,8 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-    @item = Item.find(params[:id])
     @image = @item.images
-    @user = current_user
-    @adresses = Address.find(@user.id)
+    @adresses = Address.find(current_user.id)
   end
   private
 
@@ -177,6 +172,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end
 
