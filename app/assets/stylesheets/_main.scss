@@ -87,8 +87,8 @@
       &__List {
         width: 30%;
         margin: 16px 5% 0 0;
-        text-align: left;
         display: flex;
+        text-align: left;
         flex-direction: column;
         align-items: center;
 
@@ -270,12 +270,10 @@
         margin: 26px auto;
         display: flex;
         justify-content: space-around;
-
         &__List {
           width: 220px;
-          display: inline-block;
+          display: block;
           float: left;
-
           &__A {
             background-color: #fff;
             display: inline-block;
