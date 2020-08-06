@@ -48,6 +48,10 @@
         .NotMustMessage {
           background-color: gray;
         }
+        
+      }
+      .js-file-edit {
+        display: none;
       }
       p {
         margin: 0 0 12px 0;
@@ -101,6 +105,7 @@
       .actions {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         margin-top: 60px;
         .nextBtn {
           width: 60%;
@@ -121,57 +126,50 @@
       #image-box-1 {
         display: flex;
         flex-wrap: wrap;
-      }
-      #image-box__container{
-        background-color: #F2F2F2;
-        height: 100px;
-        .input-area {
+        label {
+          border: 1px dashed #cccccc;
           height: 100%;
           width: 100%;
-          label {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px dashed #cccccc;
+          .fas{
             height: 100%;
-            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .item-num-0,
+          .item-num-5{
+            width: 620px;
+          }
+          .item-num-1,
+          .item-num-6{
+            width: 496px;
+          }
+          .item-num-2,
+          .item-num-7{
+            width: 372px;
+          }
+          .item-num-3,
+          .item-num-8{
+            width: 248px;
+          }
+          .item-num-4,
+          .item-num-9{
+            width: 124px;
           }
         }
       }
-      #sell-img {
-        display: none;
+      
+      #image-box__container{
+        background-color: #F2F2F2;
+        height: 100px;
+        
+        .input-area {
+          height: 100%;
+          width: 100%;
+          
+        }
       }
-      .item-num-0{
-        width: 100%;
-      }
-      .item-num-1{
-        width: 80%;
-      }
-      .item-num-2{
-        width: 60%;
-      }
-      .item-num-3{
-        width: 40%;
-      }
-      .item-num-4{
-        width: 20%;
-      }
-      //下段のfile_field
-      .item-num-5{
-        width: 100%;
-      }
-      .item-num-6{
-        width: 80%;
-      }
-      .item-num-7{
-        width: 60%;
-      }
-      .item-num-8{
-        width: 40%;
-      }
-      .item-num-9{
-        width: 20%;
-      }
+      
     }
   }
 }

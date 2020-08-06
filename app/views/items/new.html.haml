@@ -2,7 +2,7 @@
 .Exhibition
   .Exhibition__content
     %h2.registration 商品出品 
-    -# あとで消す
+
     .exhibitionForm
       = form_for @item do |f|
         .field
@@ -11,7 +11,7 @@
             .MustMessage 必須
           %p 最大10枚までアップロードできます
           #image-box-1 
-            -# ここに画像プレビューをjsで挿入する
+            
             .item-num-0#image-box__container
               = f.fields_for :images do |i|
                 .input-area
