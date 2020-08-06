@@ -1,0 +1,71 @@
+%section.confirm
+  .confirm__box
+    %h2 購入確認
+    .confirm__box__item
+      .confirm__box__item-img
+        =link_to item_path(@item.id) do
+          = image_tag @item.images[0].image.url, size: "100x100"
+      .confirm__box__item__info
+        .confirm__box__item__info-name
+          = @item.name
+        .confirm__box__item__info-price
+          %span.tax (税込み)
+          %span.price
+            = "¥#{@item.price}"
+    .confirm__box__confirmPrice
+      .confirm__box__confirmPrice-title
+        支払い金額
+      .confirm__box__confirmPrice-price
+        = "¥#{@item.price}"
+
+    .confirm__box__confirmPey
+      .confirm__box__confirmPey-title
+        支払い方法
+      .single-container
+        %section.credit_card_section
+          - if @card.present?
+            .container
+              .credit_card-info
+                -# indexメソッドで定義した@card_imageを呼び出し、画像をcredit_cardsというフォルダを作り、入れておく
+                = image_tag "creditcards/#{@card_image}",width:'34',height:'20', alt:'master-card'
+                %p.credit_card-info__number
+                  = "**** **** **** " + @card_info.last4 #クレジットカードの下４桁を表示
+                %p.credit_card-info__period
+                = @exp_month + " / " + @exp_year
+                = button_to "削除する", credit_card_path(@card), method: :delete, class:"credit_card-info__delete"
+          - else
+            .new-card
+              = link_to new_credit_card_path, class:"new-card-btn" do
+                %i.far.fa-credit-card
+                登録してください
+    .confirm__box__confirmAddress
+      %p.title 配送先
+      .confirm__box__confirmAddress-inner
+        %p.confirm__box__confirmAddress-inner__postcode
+          ="〒#{@user.address.post_code}"
+        %p.confirm__box__confirmAddress-inner__address
+          = @adresses.prefecture.name
+          = @user.address.city 
+          = @user.address.address
+        %p.confirm__box__confirmAddress-inner__buyer
+          = @user.address.destination_name
+    .confirm__box__confirmBottom
+      %p 
+        郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。
+        出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
+    .confirm__box__confirmButton
+      - if @card.present?
+        .button
+          = link "購入する", "#"
+      - else
+        .button_not
+          支払い方法を登録してください
+
+
+
+
+
+
+
+
+

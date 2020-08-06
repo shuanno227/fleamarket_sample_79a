@@ -17,6 +17,9 @@ Rails.application.routes.draw do
     member do
       get 'select_category_index'
     end
+    member do
+      get 'confirm'
+    end
   end
 
   resources :users
