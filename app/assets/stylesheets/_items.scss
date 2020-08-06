@@ -125,6 +125,11 @@
         font-weight: bold;
         font-size: 24px;
       }
+      .button_out {
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
         height: 60px;
         width: 100%;
         background-color: gray;
