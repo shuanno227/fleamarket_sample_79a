@@ -3,6 +3,10 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.includes([:images]).order(created_at: :desc)
+    @ladies = Item.includes(:images).where(category_id: 33..211).order("id DESC")
+    @mens = Item.includes(:images).where(category_id: 226..356).order("id DESC")
+    @babies = Item.includes(:images).where(category_id: 372..490).order("id DESC")
+    @interior = Item.includes(:images).where(category_id: 540..633).order("id DESC")
   end
 
   def new
@@ -53,9 +57,6 @@ class ItemsController < ApplicationController
     end
     binding.pry
   end
-
-# Image.where(item_id: @item).ids idを配列に格納
-# @image
 
 
   def show
