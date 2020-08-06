@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :index_category_set, only: :index
-  before_action :set_item, only: [:edit, :update, :show, :destroy, :confirm]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :show_all_instance, only: [:show, :edit,:update, :destroy]
 
 
   def index
@@ -31,7 +32,6 @@ class ItemsController < ApplicationController
   def edit
     @image = Image.where(item_id: @item)
     gon.imageLength = @image.length
-
   end
 
   def update
@@ -48,13 +48,12 @@ class ItemsController < ApplicationController
       Image.where(id: delete__db).destroy_all
       @item.touch
       if @item.update(item_params)
-        redirect_to update_done_items_path
+        redirect_to  item_path
       else
         flash.now[:alert] = '更新できませんでした'
         render :edit
       end
     end
-    binding.pry
   end
 
 
@@ -137,7 +136,24 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
+    params.require(:item).permit(:image_ids, :name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image,:_destroy, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
+  end
+
+  
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  
+
+  def show_all_instance
+    @user = User.find(@item.seller_id)
+    @images = Image.where(item_id: params[:id])
+    @images_first = Image.where(item_id: params[:id]).first
+    @category_id = @item.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
   end
 
   def find_item(category)
