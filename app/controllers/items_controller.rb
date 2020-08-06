@@ -22,7 +22,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
     else
@@ -31,7 +30,8 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    
+    @image = Image.where(item_id: @item)
+    gon.imageLength = @image.length
   end
 
   def update
@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
 
 
   def show
-    @image = Image.where(item_id: params[:id])
+    @image = Image.where(item_id: @item)
     @item_grandchildId = Category.find(@item.category_id)
     @item_childId = @item_grandchildId.parent
     @item_parentId = Category.find(@item_childId.ancestry)
@@ -71,7 +71,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     if @item.destroy
       flash[:notice] = '商品を削除しました。'
       redirect_to user_path(current_user)
@@ -131,10 +130,8 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-    @item = Item.find(params[:id])
     @image = @item.images
-    @user = current_user
-    @adresses = Address.find(@user.id)
+    @adresses = Address.find(current_user.id)
   end
   private
 
@@ -191,6 +188,10 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end
 
