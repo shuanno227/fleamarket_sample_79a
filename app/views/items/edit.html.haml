@@ -1,0 +1,82 @@
+
+.Edit
+  .Edit__content
+    %h2.registration 商品編集 
+    .exhibitionForm
+      = form_for @item,url: item_path, method: :patch do |f|
+        .field
+          .FormLabel
+            = f.label :image, '商品画像', class: "title"
+            .MustMessage 必須
+          %p 最大10枚までアップロードできます
+          #image-box-1{class:"#{@images.last.id}"}
+        
+            - @images.each do |img|
+              .item-image{id:img.id}
+                = image_tag(img.image.url,{width:"114",height:"80"})
+                .item-image__operetion
+                  .item-image__operetion--edit__delete__hidden 削除
+            %label.img-label{for: "img-file"}
+              #image-box__container{class:"item-num-#{@images.length}"}
+                #append-js-edit
+                  = f.fields_for :images do |image|
+                    .js-file_group{"data-index" => "#{image.index}"}
+                      = image.file_field :image, type: 'file', value:"#{image.object.id}",style: "",  id:"img-file", class:'js-file-edit',name: "item[images_attributes][#{@item.images.count}][image]", data:{index:""}
+                %i.fas.fa-camera
+        .field
+          .FormLabel
+            = f.label :name, '商品名', class: "title"
+            .MustMessage 必須
+          = f.text_field :name, autofocus: true, autocomplete: "off", placeholder: "40文字まで", class: "input input-default"
+        .field
+          .FormLabel
+            = f.label :description, '商品の説明', class: "title"
+            .MustMessage 必須
+          = f.text_area :description, autofocus: true, autocomplete: "off", placeholder: "商品の説明（必須 1,000文字以内）&#13;&#10;（色、素材、重さ、定価、注意点など）&#13;&#10; &#13;&#10; &#13;&#10例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのおすすめです。".html_safe , class: "input input-default input-text"
+        .field-title 商品の詳細
+        .categoryField
+          .categoryField-edit.field
+            .categoryField-edit__name.FormLabel
+              = f.label :category_id, 'カテゴリー', class: "title"
+              .MustMessage 必須
+
+            .select--wrap{id: "categoryBox--parent"}
+              = f.collection_select :category_id, Category.all.limit(13), :id, :name,{prompt:"---"},{class:"input input-default", id: "parent_edit"}
+             
+          .FormLabel
+            = f.label :brand, 'ブランド名', class: "title"
+            .NotMustMessage 任意
+          = f.text_field :brand, autofocus: true, autocomplete: "off", placeholder: "ココシャネル", class: "input input-default"
+
+        .field
+          .FormLabel
+            = f.label :condition_id, '商品の状態', class: "title"
+            .MustMessage 必須
+          = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "---"}, {class: 'input input-default'} 
+        .field-title 配送について
+        .field
+          .FormLabel
+            = f.label :shipping_cost_id, '配送料の負担', class: "title"
+            .MustMessage 必須
+          = f.collection_select :shipping_cost_id, ShippingCost.all, :id, :name, {prompt: "---"}, {class: 'input input-default'} 
+        .field
+          .FormLabel
+            = f.label :prefecture_id, '発送元の地域', class: "title"
+            .MustMessage 必須
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {class: 'input input-default'} 
+        .field
+          .FormLabel
+            = f.label :shipping_time_id, '発送までの日数', class: "title"
+            .MustMessage 必須
+          = f.collection_select :shipping_time_id, ShippingTime.all, :id, :name, {prompt: "---"}, {class: 'input input-default'} 
+        .field-title 価格
+        .field-price
+          .FormLabel
+            = f.label :price, '価格', class: "title"
+            .MustMessage 必須
+          %p.dollar ¥
+          = f.text_field :price, autofocus: true, autocomplete: "off", placeholder: "例）1500", class: "input input-default input-price"
+
+        .actions
+          = f.submit "変更する", class: "nextBtn"
+          = link_to "キャンセル", :back,class: "btn--gray"
