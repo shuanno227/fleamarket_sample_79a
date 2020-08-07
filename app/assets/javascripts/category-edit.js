@@ -33,8 +33,11 @@ $(function () {
     $('.categoryField-edit').append(grandchildSelectHtml);
   }
 
+
   // 子要素のアクション
   $("#parent_edit").on("change", function () {
+    $('.child-edit').remove();
+    $('.grandchild-edit').remove();
     $('#child-category').remove();
     $('#grandchild-category').remove();
     var parentValue = document.getElementById("parent_edit").value;
@@ -70,8 +73,11 @@ $(function () {
 
   // 孫要素のアクション
   $(".categoryField-edit").on("change", "#child_edit", function () {
-    var childValue = $('#child_edit option:selected').data('category');
+    $('.grandchild-edit').remove();
+    //var childValue = $('#child_edit option:selected').data('category');
+    var childValue = document.getElementById("child_edit").value;
     if (childValue != "---") {
+
       $('#categoryBox--grandchildren').remove(); // 選択し直したときに、前回の選択イベント発火で表示したボックスを消去
       $.ajax({
         url: '/items/search_grandchild',
@@ -80,6 +86,7 @@ $(function () {
           child_id: childValue
         },
         dataType: 'json'
+
       })
 
         .done(function (grandchildren) {
@@ -92,6 +99,7 @@ $(function () {
         .fail(function () {
           alert('カテゴリーを入力して下さい');
         })
+
     } else {
       $('#categoryBox--children').remove();
       $('#categoryBox--grandchildren').remove();

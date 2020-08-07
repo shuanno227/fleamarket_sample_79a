@@ -33,9 +33,31 @@ class ItemsController < ApplicationController
   def edit
     @image = Image.where(item_id: @item)
     gon.imageLength = @image.length
+    @category_parent_array = Category.where(ancestry: nil)
+    grandchild = @item.category
+    child = grandchild.parent
+  
+    @parent_array = []
+    @parent_array << @item.category.parent.parent.name
+    @parent_array << @item.category.parent.parent.id
+  
+    @category_children_array = Category.where(ancestry: child.ancestry)
+    @child_array = []
+    @child_array << child.name
+    @child_array << child.id
+
+    @category_grandchildren_array = Category.where(ancestry: grandchild.ancestry)
+    @grandchild_array = []
+    @grandchild_array << grandchild.name
+    @grandchild_array << grandchild.id
   end
 
   def update
+    grandchild = @item.category
+    child = grandchild.parent
+    @category_parent_array = Category.where(ancestry: nil)
+    @category_children_array = Category.where(ancestry: child.ancestry)
+    @category_grandchildren_array = Category.where(ancestry: grandchild.ancestry)
     if item_params[:images_attributes].nil?
       flash.now[:alert] = '更新できませんでした 【画像を１枚以上入れてください】'
       render :edit

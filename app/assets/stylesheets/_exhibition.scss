@@ -54,7 +54,7 @@
         }
 
         .NotMustMessage {
-          background-color: gray;
+          background-color: #cccccc;
         }
       }
 
@@ -84,7 +84,12 @@
 
       .field {
         margin: 0 0 20px 0;
-
+        .item-image__operetion--delete{
+          background-color: #cccccc;
+          color: #ffffff;
+          text-align: center;
+          width: 114px;
+        }
         .field_with_errors {
           display: contents;
         }
