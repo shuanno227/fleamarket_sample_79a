@@ -81,12 +81,17 @@
           
       - else
         .item-show__box__description
-          - if @item.buyer_id.present? 
-            .button_out
-              売り切れ
+          - if user_signed_in?
+            - if @item.buyer_id.present? 
+              .button_out
+                売り切れ
+            - else
+              %button{type: "submit", class: "button"}
+                = link_to "購入画面に進む", confirm_item_path, class: "letter"
           - else
-            %button{type: "submit", class: "button"}
-              = link_to "購入画面に進む", confirm_item_path, class: "letter"
+            %button{type: "submit", class: "button_out"}
+              = link_to "ログインしてください", new_user_session_path, class: "letter"
+
 = render 'shared/footer'
 
 
