@@ -1,3 +1,4 @@
+= render 'shared/header'
 %section.SelectCategoryBody
   .SelectCategoryBody__Title
     -if @category == 0
@@ -23,3 +24,4 @@
                 = "¥ #{item.price}"
             .SelectCategoryBody__ContentsList__Content__TextArea
               = item.name
+= render 'shared/footer'
