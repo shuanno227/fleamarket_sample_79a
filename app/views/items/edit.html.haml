@@ -41,12 +41,16 @@
               .MustMessage 必須
 
             .select--wrap{id: "categoryBox--parent"}
-              = f.collection_select :category_id, Category.all.limit(13), :id, :name,{prompt:"---"},{class:"input input-default", id: "parent_edit"}
-             
+              =f.collection_select :category_id, @category_parent_array, :id, :name, {selected:@parent_array}, {class:"input input-default", id: "parent_edit", name: ""}
+              =f.collection_select :category_id, @category_children_array, :id, :name, {},{selected:@child_array, id:"child_edit", class:"input input-default child-edit"}
+              =f.collection_select :category_id, @category_grandchildren_array, :id, :name, {selected:@item.category_id}, {class:"input input-default grandchild-edit", id:"grandchild_edit", name: "category_id"}
+              
+
+        .field
           .FormLabel
             = f.label :brand, 'ブランド名', class: "title"
             .NotMustMessage 任意
-          = f.text_field :brand, autofocus: true, autocomplete: "off", placeholder: "ココシャネル", class: "input input-default"
+          = f.text_field :brand, autofocus: true, autocomplete: "off", placeholder: "ココシャネル", class: "input input-default "
 
         .field
           .FormLabel
@@ -79,4 +83,4 @@
 
         .actions
           = f.submit "変更する", class: "nextBtn"
-          = link_to "キャンセル", :back,class: "btn--gray"
+          = link_to "キャンセル", :back,class: "cancelBtn"
