@@ -1,4 +1,5 @@
-=render 'shared/breadcrumbs'
+= render 'shared/header'
+= render 'shared/breadcrumbs'
 %section.user__my-page
   .user__my-page__box
     %h2 マイページ
@@ -20,4 +21,4 @@
             .ItemBox__name
               = item.name
             %i.fas.fa-chevron-right.icon
-
+= render 'shared/footer'
