@@ -37,8 +37,8 @@ $(function () {
 
   // 子要素のアクション
   $("#parent_form").on("change", function () {
-    console.log("確認")
     var parentValue = document.getElementById("parent_form").value;
+    console.log(parentValue);
     if (parentValue !== "---") {
       $('#categoryBox--children').remove(); // 選択し直したときに、前回の選択イベント発火で表示したボックスを消去
       $('#categoryBox--grandchildren').remove(); // 選択し直したときに、前回の選択イベント発火で表示したボックスを消去
