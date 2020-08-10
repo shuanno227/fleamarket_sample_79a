@@ -7,20 +7,15 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: 'User', optional: true, foreign_key: 'buyer_id'
 
   with_options presence: true do |admin|
-    admin.validates :name
-    admin.validates :price
-    admin.validates :description
+    admin.validates :name, length: { maximum: 40 }
+    admin.validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
+    admin.validates :description, length: { maximum: 1000 }
     admin.validates :condition_id
     admin.validates :shipping_cost_id
     admin.validates :shipping_time_id
     admin.validates :prefecture_id
     admin.validates :seller_id
   end
-
-  validates :name, length: { maximum: 40 }
-  validates :description, length: { maximum: 1000 }
-  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
-
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :condition

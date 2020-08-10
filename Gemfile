@@ -39,6 +39,7 @@ group :development, :test do
   gem 'capistrano-rails-console'
   gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
