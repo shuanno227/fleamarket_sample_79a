@@ -21,19 +21,19 @@ class CreditCardsController < ApplicationController
 
       # クレジットカード会社を取得したので、カード会社の画像をviewに表示させるため、ファイルを指定する。
       case @card_brand
-      when 'Visa'
-        # 例えば、Pay.jpからとってきたカード情報の、ブランドが"Visa"だった場合は返り値として(画像として登録されている)Visa.pngを返す
-        @card_image = 'visa.gif'
-      when 'JCB'
-        @card_image = 'jcb.gif'
-      when 'MasterCard'
-        @card_image = 'master.png'
-      when 'American Express'
-        @card_image = 'amex.gif'
-      when 'Diners Club'
-        @card_image = 'diners.gif'
-      when 'Discover'
-        @card_image = 'discover.gif'
+        when 'Visa'
+          # 例えば、Pay.jpからとってきたカード情報の、ブランドが"Visa"だった場合は返り値として(画像として登録されている)Visa.pngを返す
+          @card_image = 'visa.gif'
+        when 'JCB'
+          @card_image = 'jcb.gif'
+        when 'MasterCard'
+          @card_image = 'master.png'
+        when 'American Express'
+          @card_image = 'amex.gif'
+        when 'Diners Club'
+          @card_image = 'diners.gif'
+        when 'Discover'
+          @card_image = 'discover.gif'
       end
 
       #  viewの記述を簡略化
@@ -65,9 +65,9 @@ class CreditCardsController < ApplicationController
       # 無事トークン作成された場合のアクション。PAY.JPに登録されるユーザーを作成します。
       customer = Payjp::Customer.create(
         description: 'test',
-        email: current_user.email,
-        card: params['payjpToken'],
-        metadata: {user_id: current_user.id} #最悪なくてもOK！
+        email:       current_user.email,
+        card:        params['payjpToken'],
+        metadata:    { user_id: current_user.id } #最悪なくてもOK！
       )
 
       # PAY.JPのユーザーが作成できたので、Credit_cardモデルを登録します。
@@ -119,17 +119,17 @@ class CreditCardsController < ApplicationController
         Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
         # 請求を発行
         Payjp::Charge.create(
-          amount: @item.price,
+          amount:   @item.price,
           customer: @card.customer_id,
           currency: 'jpy'
         )
         # 売り切れなので、itemの情報をアップデートして売り切れにします。
         if @item.update(buyer_id: current_user.id)
           flash[:notice] = '購入しました。'
-          redirect_to controller: 'items', action: 'show', id: @item.id
+          redirect_to controller: 'items', action: 'index', id: @item.id
         else
           flash[:alert] = '購入に失敗しました。'
-          redirect_to controller: 'items', action: 'show', id: @item.id
+          redirect_to controller: 'items', action: 'index', id: @item.id
         end
       end
     end
