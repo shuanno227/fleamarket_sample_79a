@@ -119,8 +119,8 @@ class CreditCardsController < ApplicationController
         Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
         # 請求を発行
         Payjp::Charge.create(
-          amount:   @item.price,
-          customer: @card.user_id,
+          amount: @item.price,
+          customer: @card.payjp_id,
           currency: 'jpy'
         )
         # 売り切れなので、itemの情報をアップデートして売り切れにします。
