@@ -17,6 +17,11 @@
                             addresses GET    /addresses(.:format)                                                                     users/registrations#new_address
                                       POST   /addresses(.:format)                                                                     users/registrations#create_address
                                  root GET    /                                                                                        items#index
+                   search_child_items GET    /items/search_child(.:format)                                                            items#search_child {:format=>"json"}
+              search_grandchild_items GET    /items/search_grandchild(.:format)                                                       items#search_grandchild {:format=>"json"}
+                    update_done_items GET    /items/update_done(.:format)                                                             items#update_done
+           select_category_index_item GET    /items/:id/select_category_index(.:format)                                               items#select_category_index
+                         confirm_item GET    /items/:id/confirm(.:format)                                                             items#confirm
                                 items GET    /items(.:format)                                                                         items#index
                                       POST   /items(.:format)                                                                         items#create
                              new_item GET    /items/new(.:format)                                                                     items#new
