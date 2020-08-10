@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :index_category_set, only: :index
   before_action :set_item, only: [:show, :edit, :update, :destroy, :confirm]
   before_action :show_all_instance, only: [:show, :edit,:update, :destroy]
+  before_action :set_card, only: [:confirm]
 
 
   def index
@@ -155,6 +156,43 @@ class ItemsController < ApplicationController
   def confirm
     @image = @item.images
     @adresses = Address.find(current_user.id)
+    # すでにクレジットカードが登録しているか？
+    if @card.present?
+      # 登録している場合,PAY.JPからカード情報を取得する
+      # PAY.JPの秘密鍵をセットする。
+      Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+      # PAY.JPから顧客情報を取得する。
+      customer = Payjp::Customer.retrieve(@card.payjp_id)
+      # PAY.JPの顧客情報から、デフォルトで使うクレジットカードを取得する。
+      @card_info = customer.cards.retrieve(customer.default_card)
+      # クレジットカード情報から表示させたい情報を定義する。
+      # クレジットカードの画像を表示するために、カード会社を取得
+      @card_brand = @card_info.brand
+      # クレジットカードの有効期限を取得
+
+      # クレジットカード会社を取得したので、カード会社の画像をviewに表示させるため、ファイルを指定する。
+      case @card_brand
+      when 'Visa'
+        # 例えば、Pay.jpからとってきたカード情報の、ブランドが"Visa"だった場合は返り値として(画像として登録されている)Visa.pngを返す
+        @card_image = 'visa.gif'
+      when 'JCB'
+        @card_image = 'jcb.gif'
+      when 'MasterCard'
+        @card_image = 'master.png'
+      when 'American Express'
+        @card_image = 'amex.gif'
+      when 'Diners Club'
+        @card_image = 'diners.gif'
+      when 'Discover'
+        @card_image = 'discover.gif'
+      end
+
+      #  viewの記述を簡略化
+      ## 有効期限'月'を定義
+      @exp_month = @card_info.exp_month.to_s
+      ## 有効期限'年'を定義
+      @exp_year = @card_info.exp_year.to_s.slice(2, 3)
+    end
   end
   private
 
@@ -218,3 +256,7 @@ class ItemsController < ApplicationController
   end
 end
 
+# Use callbacks to share common setup or constraints between actions.
+def set_card
+  @card = CreditCard.where(user_id: current_user.id).first if CreditCard.where(user_id: current_user.id).present?
+end
