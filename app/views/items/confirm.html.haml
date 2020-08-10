@@ -51,17 +51,16 @@
         %p.confirm__box__confirmAddress-inner__buyer
           = current_user.address.destination_name
     .confirm__box__confirmBottom
-      %p 
+      %p
         郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更をすることが可能です。
         出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
     .confirm__box__confirmButton
       - if @card.present?
         .button
-          = link_to "購入する", "#"
+          = link_to "購入する", buy_credit_card_path(@item.id), method: :get
       - else
         .button_not
           支払い方法を登録してください
-
 
 
 

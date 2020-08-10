@@ -104,7 +104,7 @@ class CreditCardsController < ApplicationController
 
   def buy
     # 購入する商品を引っ張ってきます。
-    @item = Item.find(params[:item_id])
+    @item = Item.find(params[:id])
     # すでに購入されていないか？
     if @item.buyer.present?
       redirect_back(fallback_location: root_path)
@@ -120,7 +120,7 @@ class CreditCardsController < ApplicationController
         # 請求を発行
         Payjp::Charge.create(
           amount:   @item.price,
-          customer: @card.customer_id,
+          customer: @card.user_id,
           currency: 'jpy'
         )
         # 売り切れなので、itemの情報をアップデートして売り切れにします。
