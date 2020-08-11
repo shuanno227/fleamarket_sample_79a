@@ -156,6 +156,11 @@ class ItemsController < ApplicationController
   def confirm
     @image = @item.images
     @adresses = Address.find(current_user.id)
+    # 売り切れ商品に直接パス指定され購入されそうになった時用
+    if @item.buyer_id.present?
+      flash[:notice] = 'その商品は売り切れです'
+      redirect_to '/'
+    end
     # すでにクレジットカードが登録しているか？
     if @card.present?
       # 登録している場合,PAY.JPからカード情報を取得する
@@ -194,6 +199,7 @@ class ItemsController < ApplicationController
       @exp_year = @card_info.exp_year.to_s.slice(2, 3)
     end
   end
+
   private
 
   def login
