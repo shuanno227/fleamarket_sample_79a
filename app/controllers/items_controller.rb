@@ -34,6 +34,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    unless current_user.id == @item.seller_id
+      redirect_to '/'
+    end
     @image = Image.where(item_id: @item)
     gon.imageLength = @image.length
     @category_parent_array = Category.where(ancestry: nil)
