@@ -246,7 +246,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  private
 
   def index_category_set
     array = [1, 2, 3, 4]
@@ -261,16 +260,9 @@ class ItemsController < ApplicationController
     end
   end
 
-  def item_params
-    params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
-  end
-
-  def set_item
-    @item = Item.find(params[:id])
+  # Use callbacks to share common setup or constraints between actions.
+  def set_card
+    @card = CreditCard.where(user_id: current_user.id).first if CreditCard.where(user_id: current_user.id).present?
   end
 end
 
-# Use callbacks to share common setup or constraints between actions.
-def set_card
-  @card = CreditCard.where(user_id: current_user.id).first if CreditCard.where(user_id: current_user.id).present?
-end
