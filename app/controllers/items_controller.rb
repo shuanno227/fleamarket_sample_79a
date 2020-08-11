@@ -211,69 +211,69 @@ class ItemsController < ApplicationController
 
   private
 
-    def login
-      unless user_signed_in?
-        redirect_to new_user_session_path
-      end
+  def login
+    unless user_signed_in?
+      redirect_to new_user_session_path
     end
+  end
 
-    def item_params
-      params.require(:item).permit(:image_ids, :name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
-    end
-
-
-    def set_item
-      @item = Item.find(params[:id])
-    end
+  def item_params
+    params.require(:item).permit(:image_ids, :name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
+  end
 
 
-    def show_all_instance
-      @user                = User.find(@item.seller_id)
-      @images              = Image.where(item_id: params[:id])
-      @images_first        = Image.where(item_id: params[:id]).first
-      @category_id         = @item.category_id
-      @category_parent     = Category.find(@category_id).parent.parent
-      @category_child      = Category.find(@category_id).parent
-      @category_grandchild = Category.find(@category_id)
-    end
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
-    def find_item(category)
-      category.each do |id|
-        item_array = Item.includes(:images).where(category_id: id)
-        # find_by()メソッドで該当のレコードがなかった場合、itemオブジェクトに空の配列を入れないようにするための処理
-        if item_array.present?
-          item_array.each do |item|
-            if item.present?
-              # find_by()メソッドで該当のレコードが見つかった場合、@item配列オブジェクトにそのレコードを追加する
-              @items.push(item)
-            end
+
+  def show_all_instance
+    @user                = User.find(@item.seller_id)
+    @images              = Image.where(item_id: params[:id])
+    @images_first        = Image.where(item_id: params[:id]).first
+    @category_id         = @item.category_id
+    @category_parent     = Category.find(@category_id).parent.parent
+    @category_child      = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
+  end
+
+  def find_item(category)
+    category.each do |id|
+      item_array = Item.includes(:images).where(category_id: id)
+      # find_by()メソッドで該当のレコードがなかった場合、itemオブジェクトに空の配列を入れないようにするための処理
+      if item_array.present?
+        item_array.each do |item|
+          if item.present?
+            # find_by()メソッドで該当のレコードが見つかった場合、@item配列オブジェクトにそのレコードを追加する
+            @items.push(item)
           end
         end
       end
     end
+  end
 
   private
 
-    def index_category_set
-      array = [1, 2, 3, 4]
-      for num in array do
-        search_anc = Category.where('ancestry LIKE(?)', "#{num}/%")
-        ids        = []
-        search_anc.each do |i|
-          ids << i[:id]
-        end
-        @items = Item.where(category_id: ids).order('id DESC').limit(10)
-        instance_variable_set("@cat_no#{num}", @items)
+  def index_category_set
+    array = [1, 2, 3, 4]
+    for num in array do
+      search_anc = Category.where('ancestry LIKE(?)', "#{num}/%")
+      ids        = []
+      search_anc.each do |i|
+        ids << i[:id]
       end
+      @items = Item.where(category_id: ids).order('id DESC').limit(10)
+      instance_variable_set("@cat_no#{num}", @items)
     end
+  end
 
-    def item_params
-      params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
-    end
+  def item_params
+    params.require(:item).permit(:name, :price, :description, :condition_id, :shipping_cost_id, :shipping_time_id, :prefecture_id, :category_id, :brand, :buyer_id, :seller_id, images_attributes: [:image, :id]).merge(seller_id: current_user.id, category_id: params[:category_id])
+  end
 
-    def set_item
-      @item = Item.find(params[:id])
-    end
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
 
 # Use callbacks to share common setup or constraints between actions.
