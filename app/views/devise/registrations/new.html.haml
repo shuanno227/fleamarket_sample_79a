@@ -46,11 +46,11 @@
           .FormLabel
             = f.label '生年月日', class: "title"
             .MustMessage 必須
-          = f.select :birth_year,["--"], {},{class: "birth input-default", id:"select_birth_year"}
+          = f.select :birth_year,{}, {prompt:"--"},{class: "birth input-default", id:"select_birth_year"}
           = "年"
-          = f.select :birth_month,["--"], {},{class: "birth input-default", id:"select_birth_month"}
+          = f.select :birth_month,{}, {prompt:"--"},{class: "birth input-default", id:"select_birth_month"}
           = "月"
-          = f.select :birth_day,["--"], {},{class: "birth input-default", id:"select_birth_day"}
+          = f.select :birth_day,{}, {prompt:"--"},{class: "birth input-default", id:"select_birth_day"}
           = "日"
           %p.attention ＊本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
