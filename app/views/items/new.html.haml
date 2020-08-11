@@ -5,14 +5,12 @@
 
     .exhibitionForm
       = form_for @item do |f|
-        .field
+        .field.image
           .FormLabel
             = f.label :image, '商品画像', class: "title"
             .MustMessage 必須
           %p 最大10枚までアップロードできます
-          
           #image-box-1
-
             .item-num-0#image-box__container
               = f.fields_for :images do |i|
                 .input-area
@@ -26,7 +24,7 @@
           .FormLabel
             = f.label :name, '商品名', class: "title"
             .MustMessage 必須
-          = f.text_field :name, autofocus: true, autocomplete: "off", placeholder: "40文字まで", class: "input input-default"
+          = f.text_field :name, autofocus: true, required: true, autocomplete: "off", placeholder: "40文字まで", class: "input input-default"
           - if @item.errors.any?
             - @item.errors.full_messages.each do |message|
               - if message.include?("商品名")
@@ -35,7 +33,7 @@
           .FormLabel
             = f.label :description, '商品の説明', class: "title"
             .MustMessage 必須
-          = f.text_area :description, autofocus: true, autocomplete: "off", placeholder: "商品の説明（必須 1,000文字以内）&#13;&#10;（色、素材、重さ、定価、注意点など）&#13;&#10; &#13;&#10; &#13;&#10例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのおすすめです。".html_safe , class: "input input-default input-text"
+          = f.text_area :description, autofocus: true,required: true, autocomplete: "off", placeholder: "商品の説明（必須 1,000文字以内）&#13;&#10;（色、素材、重さ、定価、注意点など）&#13;&#10; &#13;&#10; &#13;&#10例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのおすすめです。".html_safe , class: "input input-default input-text"
           - if @item.errors.any?
             - @item.errors.full_messages.each do |message|
               - if message.include?("商品の説明")
@@ -48,7 +46,7 @@
               .MustMessage 必須
 
             .select--wrap{id: "categoryBox--parent"}
-              = f.collection_select :category_id, Category.all.limit(13), :id, :name,{prompt:"---"},{class:"input input-default", id: "parent_form"}
+              = f.collection_select :category_id, Category.all.limit(13), :id, :name, {prompt:"---"},{required: true,class:"input input-default", id: "parent_form"}
               - if @item.errors.any?
                 - @item.errors.full_messages.each do |message|
                   - if message.include?("カテゴリー")
@@ -64,7 +62,7 @@
           .FormLabel
             = f.label :condition_id, '商品の状態', class: "title"
             .MustMessage 必須
-          = f.collection_select :condition_id, Condition.all, :id, :name, {prompt: "---"}, {class: 'input input-default'} 
+          = f.collection_select :condition_id, Condition.all, :id, :name,{prompt: "---"}, {required: true, class: 'input input-default'} 
           - if @item.errors.any?
             - @item.errors.full_messages.each do |message|
               - if message.include?("商品の状態")
@@ -74,7 +72,7 @@
           .FormLabel
             = f.label :shipping_cost_id, '配送料の負担元', class: "title"
             .MustMessage 必須
-          = f.collection_select :shipping_cost_id, ShippingCost.all, :id, :name, {prompt: "---"}, {class: 'input input-default'} 
+          = f.collection_select :shipping_cost_id, ShippingCost.all, :id, :name, {prompt: "---"}, {required: true, class: 'input input-default'} 
           - if @item.errors.any?
             - @item.errors.full_messages.each do |message|
               - if message.include?("配送料の負担元")
@@ -83,7 +81,7 @@
           .FormLabel
             = f.label :prefecture_id, '発送元の地域', class: "title"
             .MustMessage 必須
-          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {class: 'input input-default'} 
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {required: true, class: 'input input-default'} 
           - if @item.errors.any?
             - @item.errors.full_messages.each do |message|
               - if message.include?("発送元の地域")
@@ -92,7 +90,7 @@
           .FormLabel
             = f.label :shipping_time_id, '発送までの日数', class: "title"
             .MustMessage 必須
-          = f.collection_select :shipping_time_id, ShippingTime.all, :id, :name, {prompt: "---"}, {class: 'input input-default'} 
+          = f.collection_select :shipping_time_id, ShippingTime.all, :id, :name,{prompt: "---"}, {required: true, class: 'input input-default'} 
           - if @item.errors.any?
             - @item.errors.full_messages.each do |message|
               - if message.include?("発送までの日数")
@@ -103,7 +101,7 @@
             = f.label :price, '価格', class: "title"
             .MustMessage 必須
           %p.dollar ¥
-          = f.text_field :price, autofocus: true, autocomplete: "off", placeholder: "例）1500", class: "input input-default input-price"
+          = f.text_field :price, autofocus: true,required: true, autocomplete: "off", placeholder: "例）1500", class: "input input-default input-price"
         .field
           - if @item.errors.any?
             - @item.errors.full_messages.each do |message|

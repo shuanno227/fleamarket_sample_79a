@@ -3,7 +3,6 @@
   height: 100%;
   padding-top: 100px;
   background-color: #F2F2F2;
-
   &__content {
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     font-size: 14px;
@@ -12,7 +11,7 @@
     margin: 0 auto;
     background-color: #ffffff;
     padding: 24px 0;
-
+    
     .registration {
       margin: 0 auto;
       font-size: 22px;
@@ -153,16 +152,17 @@
       #image-box-1 {
         display: flex;
         flex-wrap: wrap;
+       
       }
 
       #image-box__container {
         background-color: #F2F2F2;
         height: 100px;
-
+        
         .input-area {
           height: 100%;
           width: 100%;
-
+          
           label {
             display: flex;
             justify-content: center;
