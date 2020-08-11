@@ -1,3 +1,5 @@
+.alert
+  = alert 
 .Edit
   = render 'shared/icon'
   .Edit__content
@@ -23,6 +25,8 @@
                     .js-file_group{"data-index" => "#{image.index}"}
                       = image.file_field :image, type: 'file', value:"#{image.object.id}",style: "",  id:"img-file", class:'js-file-edit',name: "item[images_attributes][#{@item.images.count}][image]", data:{index:""}
                 %i.fas.fa-camera
+          - if @item.errors.any? 
+            %p.error 画像を再度アップロードしなおしてください
         .field
           .FormLabel
             = f.label :name, '商品名', class: "title"

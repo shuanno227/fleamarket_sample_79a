@@ -65,7 +65,7 @@ class ItemsController < ApplicationController
     @category_children_array      = Category.where(ancestry: child.ancestry)
     @category_grandchildren_array = Category.where(ancestry: grandchild.ancestry)
     if item_params[:images_attributes].nil?
-      flash.now[:alert] = '更新できませんでした 【画像を１枚以上入れてください】'
+      flash.now[:alert] = "更新できませんでした 【画像を１枚以上入れてください】"
       render :edit
     else
       exit_ids = []
