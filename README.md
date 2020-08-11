@@ -2,20 +2,19 @@
 
 ## users テーブル
 
-| Column                | Type       | Options         |
-| --------------------- | ---------- | --------------- |
-| nickname              | string     | null: false     |
-| email                 | string     | null: false     |
-| password              | string     | null: false     |
-| password_confirmation | string     | null: false     |
-| first_name            | string     | null: false     |
-| last_name             | string     | null: false     |
-| first_name_hurigana   | string     | null: false     |
-| last_name_furigana    | string     | null: false     |
-| birthday              | date       | null: false     |
-| ~~birth_year~~        | ~~string~~ | ~~null: false~~ |
-| ~~birth_month~~       | ~~string~~ | ~~null: false~~ |
-| ~~birth_day~~         | ~~string~~ | ~~null: false~~ |
+| Column                | Type   | Options     |
+| --------------------- | ------ | ----------- |
+| nickname              | string | null: false |
+| email                 | string | null: false |
+| password              | string | null: false |
+| password_confirmation | string | null: false |
+| first_name            | string | null: false |
+| last_name             | string | null: false |
+| first_name_hurigana   | string | null: false |
+| last_name_furigana    | string | null: false |
+| birth_year            | string | null: false |
+| birth_month           | string | null: false |
+| birth_day             | string | null: false |
 
 ### Association
 
