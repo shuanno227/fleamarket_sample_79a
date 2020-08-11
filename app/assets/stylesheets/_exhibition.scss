@@ -93,9 +93,14 @@
         .field_with_errors {
           display: contents;
         }
+        
 
       }
-
+      .error{
+        color: #ea352d;
+        font-weight: 600;
+        margin-top: 10px;
+      }
       .field-price {
         display: flex;
         position: relative;

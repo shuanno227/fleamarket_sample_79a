@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザー
       address: 住所
+      item: 商品
     attributes:
       user:
         nickname: 名前
@@ -20,3 +21,12 @@ ja:
         city: 市区町村
         address: 番地
         telephone_number: 電話番号
+      item: 
+        category: カテゴリー
+        name: 商品名
+        price: 価格
+        description: 商品の説明
+        condition_id: 商品の状態
+        shipping_cost_id: 配送料の負担元
+        shipping_time_id: 発送までの日数
+        prefecture_id: 発送元の地域
