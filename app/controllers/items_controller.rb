@@ -7,11 +7,12 @@ class ItemsController < ApplicationController
   before_action :login, except: [:index, :show]
 
   def index
-    @items    = Item.includes([:images]).order(created_at: :desc)
+    @items    = Item.includes(:images).order(created_at: :desc)
     @ladies   = Item.includes(:images).where(category_id: 33..211).order("id DESC")
     @mens     = Item.includes(:images).where(category_id: 226..356).order("id DESC")
     @babies   = Item.includes(:images).where(category_id: 372..490).order("id DESC")
     @interior = Item.includes(:images).where(category_id: 540..633).order("id DESC")
+    binding.pry
   end
 
   def new
@@ -26,11 +27,17 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
-      redirect_to root_path
-    else
+    if item_params[:images_attributes].nil?
+      flash.now[:alert] = "更新できませんでした 【画像を１枚以上入れてください】"
       @item.images.build
       render :new
+    else
+      if @item.save
+        redirect_to root_path
+      else
+        @item.images.build
+        render :new
+      end
     end
   end
 
