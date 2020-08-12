@@ -12,7 +12,6 @@ class ItemsController < ApplicationController
     @mens     = Item.includes(:images).where(category_id: 226..356).order("id DESC")
     @babies   = Item.includes(:images).where(category_id: 372..490).order("id DESC")
     @interior = Item.includes(:images).where(category_id: 540..633).order("id DESC")
-    binding.pry
   end
 
   def new
