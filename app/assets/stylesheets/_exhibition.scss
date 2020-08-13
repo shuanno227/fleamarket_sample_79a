@@ -80,6 +80,9 @@
       .input-text {
         height: 150px;
       }
+      .opacity{
+        opacity: 0;
+      }
 
       .field {
         margin: 0 0 20px 0;
@@ -147,7 +150,9 @@
         justify-content: center;
         flex-wrap: wrap;
         width: 20%;
+        margin: 0 0 10px 0;
       }
+      
 
       #image-box-1 {
         display: flex;
@@ -162,7 +167,7 @@
         .input-area {
           height: 100%;
           width: 100%;
-          
+          position: relative;
           label {
             display: flex;
             justify-content: center;
@@ -170,6 +175,9 @@
             border: 1px dashed #cccccc;
             height: 100%;
             width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
           }
         }
       }

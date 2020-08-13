@@ -28,7 +28,6 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if item_params[:images_attributes].nil?
       flash.now[:alert] = "更新できませんでした 【画像を１枚以上入れてください】"
-      @item.images.build
       render :new
     else
       if @item.save
