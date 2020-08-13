@@ -16,30 +16,23 @@
             .item-num-0#image-box__container
               = f.fields_for :images do |i|
                 .input-area
-                  = i.file_field :image, type: 'file', name: "item[images_attributes][][image]",value:"",style:"display:none",id:"img-file"
+                  = i.file_field :image, type: 'file', name: "item[images_attributes][][image]",value:"",style:"display:none",id:"img-file",autofocus:true 
                   %label{for: "img-file"}
                     %i.fas.fa-camera
                     
-          - if @item.errors.any? 
-            %p.error 画像を再度アップロードしなおしてください
+         
         .field
           .FormLabel
             = f.label :name, '商品名', class: "title"
             .MustMessage 必須
           = f.text_field :name, autofocus: true, required: true, autocomplete: "off", placeholder: "40文字まで", class: "input input-default"
-          - if @item.errors.any?
-            - @item.errors.full_messages.each do |message|
-              - if message.include?("商品名")
-                %p.error 商品名を入力してください
+         
         .field
           .FormLabel
             = f.label :description, '商品の説明', class: "title"
             .MustMessage 必須
           = f.text_area :description, autofocus: true,required: true, autocomplete: "off", placeholder: "商品の説明（必須 1,000文字以内）&#13;&#10;（色、素材、重さ、定価、注意点など）&#13;&#10; &#13;&#10; &#13;&#10例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのおすすめです。".html_safe , class: "input input-default input-text"
-          - if @item.errors.any?
-            - @item.errors.full_messages.each do |message|
-              - if message.include?("商品の説明")
-                %p.error 商品の説明を入力してください
+          
         .field-title 商品の詳細
         .categoryField
           .categoryField-details.field
@@ -49,10 +42,7 @@
 
             .select--wrap{id: "categoryBox--parent"}
               = f.collection_select :category_id, Category.all.limit(13), :id, :name, {prompt:"---"},{required: true,class:"input input-default", id: "parent_form"}
-              - if @item.errors.any?
-                - @item.errors.full_messages.each do |message|
-                  - if message.include?("カテゴリー")
-                    %p.error カテゴリーを入力してください
+             
 
         .field
           .FormLabel
@@ -65,38 +55,26 @@
             = f.label :condition_id, '商品の状態', class: "title"
             .MustMessage 必須
           = f.collection_select :condition_id, Condition.all, :id, :name,{prompt: "---"}, {required: true, class: 'input input-default'} 
-          - if @item.errors.any?
-            - @item.errors.full_messages.each do |message|
-              - if message.include?("商品の状態")
-                %p.error 商品の状態を入力してください
+          
         .field-title 配送について
         .field
           .FormLabel
             = f.label :shipping_cost_id, '配送料の負担元', class: "title"
             .MustMessage 必須
           = f.collection_select :shipping_cost_id, ShippingCost.all, :id, :name, {prompt: "---"}, {required: true, class: 'input input-default'} 
-          - if @item.errors.any?
-            - @item.errors.full_messages.each do |message|
-              - if message.include?("配送料の負担元")
-                %p.error 配送料の負担元を入力してください
+          
         .field
           .FormLabel
             = f.label :prefecture_id, '発送元の地域', class: "title"
             .MustMessage 必須
           = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {required: true, class: 'input input-default'} 
-          - if @item.errors.any?
-            - @item.errors.full_messages.each do |message|
-              - if message.include?("発送元の地域")
-                %p.error 発送元の地域を入力してください
+          
         .field
           .FormLabel
             = f.label :shipping_time_id, '発送までの日数', class: "title"
             .MustMessage 必須
           = f.collection_select :shipping_time_id, ShippingTime.all, :id, :name,{prompt: "---"}, {required: true, class: 'input input-default'} 
-          - if @item.errors.any?
-            - @item.errors.full_messages.each do |message|
-              - if message.include?("発送までの日数")
-                %p.error 発送までの日数を入力してください
+          
         .field-title 価格
         .field-price
           .FormLabel
@@ -105,10 +83,7 @@
           %p.dollar ¥
           = f.text_field :price, autofocus: true,required: true, autocomplete: "off", placeholder: "例）1500", class: "input input-default input-price"
         .field
-          - if @item.errors.any?
-            - @item.errors.full_messages.each do |message|
-              - if message.include?("価格は数値で")
-                %p.error 価格を数値で入力してください
+          
 
         .actions
           = f.submit "出品する", class: "nextBtn"
