@@ -107,6 +107,14 @@
         }
       }
     }
+    &__description{
+      
+      width: 100%;
+      .description-area{
+        width: 100%;
+        word-wrap: break-word;
+      }
+    }
 
     &__button {
       width: 90%;
